@@ -30,7 +30,7 @@ export default function Navbar() {
             {["Home", "About", "Programs", "Locations", "Contact"].map((item) => (
               <button
                 key={item}
-                onClick={() => navigate(getPath(item))}
+                onClick={() => navigate(getPath(item),{state:{number:"+919945023670",email:"new@gmail.com",addr:"udupi"}})}
                 className="text-gray-800 hover:text-red-900 transition-colors"
               >
                 {item}
