@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiOutlineEnvironment } from "react-icons/ai";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -99,15 +100,17 @@ export default function Home() {
                     <p className="text-gray-600 leading-relaxed">
                       {program.desc}
                     </p>
-                    <button
-                      className="mt-6 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
-                      onClick={() => navigate("/programs")}
-                    >
-                      Learn More →
-                    </button>
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="text-center mt-16">
+              <button
+                className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
+                onClick={() => navigate("/programs")}
+              >
+                All Programs
+              </button>
             </div>
           </div>
         </div>
@@ -142,7 +145,7 @@ export default function Home() {
                   name: "Snehal Prabhu",
                   rating: 5,
                   review:
-                    "Looking for a Professional Accadamy along with The Best All Round Dedicated Coach for ur Ward - Ur at rgt place. Along with His Superb team. They are Fantastic. My all the Best to PADUKUNE Academy n its STUDENTS . Keep Rocking.",
+                    "Looking for a Professional Accadamy along with The Best All Round Dedicated Coach for ur Ward - Ur at rgt place. Along with His Superb team. They are Fantastic. My all the Best to PADUKONE Academy n its STUDENTS . Keep Rocking.",
                 },
                 {
                   name: "Vaibhav Bhat",
@@ -172,6 +175,68 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Locations Section */}
+        <div className="w-full py-24 bg-gray-100">
+          <div className="w-full max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold mb-6 text-blue-900">
+                Our Locations
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Visit one of our centers and experience top-class facilities and
+                coaching.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-10">
+              {[
+                { name: "Manipal Center", img: "/api/placeholder/400/300" },
+                { name: "Surathkal Center", img: "/api/placeholder/400/300" },
+                { name: "Mangalore Center", img: "/api/placeholder/400/300" },
+              ].map((location) => (
+                <div
+                  key={location.name}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                >
+                  <img
+                    src={location.img}
+                    alt={location.name}
+                    className="w-full h-56 object-cover"
+                  />
+                  <div className="p-6 flex items-center gap-4">
+                    <AiOutlineEnvironment className="text-blue-900 text-2xl" />
+                    <h3 className="text-xl font-bold text-blue-900">
+                      {location.name}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-16">
+              <button
+                className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
+                onClick={() => navigate("/locations")}
+              >
+                All Locations
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Media Section */}
+        <div className="w-full bg-blue-900 text-white py-12">
+          <div className="w-full max-w-7xl mx-auto px-4 text-center">
+            <h3 className="text-2xl font-bold mb-4">Follow Us</h3>
+            <div className="flex justify-center gap-6">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="text-4xl hover:text-blue-400 transition-colors" />
+              </a>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="text-4xl hover:text-blue-400 transition-colors" />
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Footer */}
         <footer className="w-full bg-blue-900 text-white py-12">
           <div className="w-full max-w-7xl mx-auto px-4 text-center">
@@ -183,5 +248,7 @@ export default function Home() {
     </div>
   );
 }
+
+
 
 
