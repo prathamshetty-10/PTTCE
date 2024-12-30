@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
+import mlr from "../assets/pttce.jpg";
 
 export default function Locations() {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ export default function Locations() {
                 {/* Location Image */}
                 <div className="h-48 relative">
                   <img
-                    src="/api/placeholder/600/400"
+                    src={mlr}
                     alt={location.name}
                     className="w-full h-full object-cover"
                   />

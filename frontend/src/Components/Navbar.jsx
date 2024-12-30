@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="text-2xl font-bold text-red-900">SportCenter</div>
+          <div className="text-2xl font-bold text-red-900">PTTCE</div>
 
           {/* Hamburger Menu Button (visible on small screens) */}
           <button
