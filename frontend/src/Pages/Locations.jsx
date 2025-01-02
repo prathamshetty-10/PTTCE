@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
 import mlr from "../assets/pttce.jpg";
-
+import mapPic1 from "../assets/ss.png"
+import mapPic2 from "../assets/ss.png"
+import mapPic3 from "../assets/ss.png"
 export default function Locations() {
   const navigate = useNavigate();
+  const mapRef = useRef(null);
+  const [selectedLocation, setSelectedLocation] = useState(null);
 
   const locations = [
     {
@@ -12,23 +16,39 @@ export default function Locations() {
       description: "Our Manipal center offers a comprehensive training facility equipped with top-notch equipment and amenities. Located conveniently in the heart of Manipal, this center is perfect for players at all levels looking to train with the best.",
       address: "[Add full address here]",
       contact: "+91 9876543210",
-      hours: "Mon-Sat, 8:00 AM - 8:00 PM"
+      hours: "Mon-Sat, 8:00 AM - 8:00 PM",
+      mapsQuery: "Padukone+Table+Tennis+Center+Manipal",
+      mapImage: mapPic1
     },
     {
       name: "Suratkal Center",
       description: "The Suratkal center is designed for those passionate about table tennis, offering well-maintained tables and a focused training environment. Our experienced coaches provide personalized attention to help players develop their skills.",
       address: "[Add full address here]",
       contact: "+91 9876543211",
-      hours: "Mon-Sat, 8:00 AM - 8:00 PM"
+      hours: "Mon-Sat, 8:00 AM - 8:00 PM",
+      mapsQuery: "Padukone+Table+Tennis+Center+Suratkal",
+      mapImage: mapPic2
     },
     {
       name: "Mangalore Center",
       description: "Located in Mangalore, this center serves as our flagship facility, featuring multiple tables and professional training programs. We also collaborate with schools around Mangalore, providing coaching programs tailored to nursery kids under the \"Sportsgen\" initiative.",
       address: "[Add full address here]",
       contact: "+91 9876543212",
-      hours: "Mon-Sat, 8:00 AM - 8:00 PM"
+      hours: "Mon-Sat, 8:00 AM - 8:00 PM",
+      mapsQuery: "Padukone+Table+Tennis+Center+Mangalore",
+      mapImage: mapPic3
     }
   ];
+
+  const scrollToMap = (location) => {
+    mapRef.current?.scrollIntoView({ behavior: 'smooth' });
+    setSelectedLocation(location);
+  };
+
+  const openInGoogleMaps = (location) => {
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.mapsQuery}`;
+    window.open(mapsUrl, '_blank');
+  };
 
   return (
     <div className="min-h-screen w-full flex flex-col">
@@ -91,26 +111,53 @@ export default function Locations() {
                     </div>
                   </div>
 
-                  {/* Contact Button */}
-                  <button 
-                    onClick={() => navigate("/contact")}
-                    className="mt-6 w-full bg-blue-900 text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-blue-800 transition-colors flex items-center justify-center"
-                  >
-                    Contact This Center
-                    <svg 
-                      className="w-4 h-4 ml-2" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
+                  {/* Action Buttons */}
+                  <div className="mt-6 grid grid-cols-2 gap-4">
+                    <button 
+                      onClick={() => navigate("/contact")}
+                      className="bg-blue-900 text-white px-4 py-3 rounded-lg text-sm font-semibold hover:bg-blue-800 transition-colors flex items-center justify-center"
                     >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M9 5l7 7-7 7" 
-                      />
-                    </svg>
-                  </button>
+                      Contact Us
+                      <svg 
+                        className="w-4 h-4 ml-2" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M9 5l7 7-7 7" 
+                        />
+                      </svg>
+                    </button>
+                    <button 
+                      onClick={() => scrollToMap(location)}
+                      className="bg-white text-blue-900 border-2 border-blue-900 px-4 py-3 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors flex items-center justify-center"
+                    >
+                      Find on Map
+                      <svg 
+                        className="w-4 h-4 ml-2" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" 
+                        />
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" 
+                        />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -118,18 +165,35 @@ export default function Locations() {
         </div>
       </div>
 
-      {/* Map Section Placeholder */}
-      <div className="w-full py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-blue-900">Find Us on the Map</h2>
-          <div className="bg-gray-200 h-96 rounded-xl">
-            {/* Map integration would go here */}
-            <div className="w-full h-full flex items-center justify-center text-gray-500">
-              Map Integration Coming Soon
+      {/* Map Section */}
+      <div ref={mapRef} className="w-full py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-6 text-blue-900">Find Us on Map</h2>
+        <div className="relative rounded-xl overflow-hidden shadow-lg">
+          {selectedLocation ? (
+            <div 
+              className="cursor-pointer"
+              onClick={() => openInGoogleMaps(selectedLocation)}
+            >
+              <img
+                src={selectedLocation.mapImage}
+                alt={`Map for ${selectedLocation.name}`}
+                className="w-full h-[600px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">{selectedLocation.name}</h3>
+                <p className="text-sm text-blue-100">Click to open in Google Maps</p>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="w-full h-[600px] bg-gray-100 flex items-center justify-center text-gray-500">
+              <p className="text-xl">Select a location to view on map</p>
+            </div>
+          )}
         </div>
       </div>
+    </div>
 
       {/* Footer */}
       <footer className="w-full bg-blue-900 text-white py-8">

@@ -25,15 +25,17 @@ export default function Home() {
 
   const settings = {
     dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    prevArrow: <CustomArrow direction="prev"/>,
-    nextArrow: <CustomArrow direction="next" />
+    infinite: true,    // Ensures the loop is infinite
+    speed: 500,        // Speed of the slide transition (in ms)
+    slidesToShow: 1,   // Number of slides to show at once
+    slidesToScroll: 1, // Number of slides to scroll per click
+    autoplay: true,    // Enables auto-sliding
+    autoplaySpeed: 3000, // Adjust speed for auto transition
+    prevArrow: <CustomArrow direction="prev" />,
+    nextArrow: <CustomArrow direction="next" />,
+    pauseOnHover: false, // Pauses on hover to improve user experience
   };
+  
 
   return (
     <div className="min-h-screen w-full flex flex-col relative">
