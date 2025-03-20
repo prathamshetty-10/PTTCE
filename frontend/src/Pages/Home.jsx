@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar.jsx";
 import { AiFillStar, AiOutlineEnvironment } from "react-icons/ai";
 import { FaInstagram, FaFacebook, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import mlr from "../assets/pttce.jpg";
+import logo from "../assets/logo.png"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -42,9 +43,10 @@ export default function Home() {
       <div className="fixed top-0 left-0 right-0 z-50 bg-blue-900">
         <Navbar />
       </div>
-
-      <div className="w-full mt-16">
-        <div className="w-full">
+      
+      <div className="w-full mt-16  ">
+        {/* hero section*/}
+        <div className="w-full ">
           <Slider {...settings}>
             <div className="relative">
               <div className="w-full h-[91vh] bg-gradient-to-r from-blue-900/90 to-blue-600/80 flex justify-center items-center">
@@ -89,9 +91,40 @@ export default function Home() {
             ))}
           </Slider>
         </div>
+        {/*About section*/}
+        {/* About Us Section */}
+<div className="w-full flex items-center mt-[40px]  pb-10 pt-10">
+<div className="w-full max-w-7xl mx-auto px-4 ">
+  <div className="text-center mb-16">
+    <h2 className="text-5xl font-bold mb-6 text-blue-900">About Us</h2>
+    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      Know more about us
+    </p>
+  </div>
+  <div className="flex mb-0">
+    <div className="w-[50%] flex flex-col items-center justify-center">
+      <p className="text-lg text-gray-700 max-w-md">
+        Our elite sports training center offers professional coaching, state-of-the-art facilities, and a personalized approach to help you achieve your goals.
+      </p>
+      <div className="text-center mt-16">
+    <button
+      className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
+      onClick={() => navigate("/programs")}
+    >
+      Know More
+    </button>
+  </div>
+    </div>
+    <div className="w-[50%] pl-[100px] pb-10 h-[400px]">
+      <img src={logo} alt="About Us Image" className="w-[100%] h-[95%] object-cover" />
+    </div>
+  </div>
+  
+</div>
+</div>
 
         {/* Programs Section */}
-        <div className="w-full py-24 bg-white">
+        <div className="w-full pb-24 pt-12 bg-gray-100 ">
           <div className="w-full max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold mb-6 text-blue-900">Our Programs</h2>
@@ -152,7 +185,7 @@ export default function Home() {
         </div>
 
         {/* Reviews Section */}
-        <div className="w-full py-24 bg-gray-50">
+        <div className="w-full py-24 bg-white">
           <div className="w-full max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold mb-6 text-blue-900">
@@ -203,9 +236,61 @@ export default function Home() {
             </div>
           </div>
         </div>
+              {/* FAQ Section */}
+<div className="w-full h-[91vh]  flex items-center bg-gray-100">
+<div className="w-full max-w-7xl mx-auto px-4">
+  <div className="text-center mb-16">
+    <h2 className="text-5xl font-bold mb-6 text-blue-900">FAQs</h2>
+    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      Find answers to commonly asked questions
+    </p>
+  </div>
 
+  <div className="grid grid-cols-2 gap-8">
+    {/* Question 1 */}
+    <div className="bg-white shadow-md p-6 rounded-lg">
+      <h3 className="text-2xl font-semibold text-blue-900 mb-2">
+        What facilities do you offer?
+      </h3>
+      <p className="text-gray-600">
+        We provide advanced training facilities, fitness centers, and expert coaching for all skill levels.
+      </p>
+    </div>
+
+    {/* Question 2 */}
+    <div className="bg-white shadow-md p-6 rounded-lg">
+      <h3 className="text-2xl font-semibold text-blue-900 mb-2">
+        How can I enroll?
+      </h3>
+      <p className="text-gray-600">
+        You can enroll online by visiting our registration page or contacting our support team.
+      </p>
+    </div>
+
+    {/* Question 3 */}
+    <div className="bg-white shadow-md p-6 rounded-lg">
+      <h3 className="text-2xl font-semibold text-blue-900 mb-2">
+        Are there programs for beginners?
+      </h3>
+      <p className="text-gray-600">
+        Yes! We offer beginner-friendly programs designed to build foundational skills.
+      </p>
+    </div>
+
+    {/* Question 4 */}
+    <div className="bg-white shadow-md p-6 rounded-lg">
+      <h3 className="text-2xl font-semibold text-blue-900 mb-2">
+        What are the training timings?
+      </h3>
+      <p className="text-gray-600">
+        Our training schedules are flexible, with morning, afternoon, and evening slots available.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
         {/* Locations Section */}
-        <div className="w-full py-24 bg-gray-100">
+        <div className="w-full py-24 bg-white">
           <div className="w-full max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold mb-6 text-blue-900">Our Locations</h2>
@@ -244,7 +329,7 @@ export default function Home() {
         </div>
 
         {/* Social Media Section */}
-        <div className="w-full bg-blue-900 text-white py-12">
+        <div className="w-full bg-blue-900 text-gray-100 py-12">
           <div className="w-full max-w-7xl mx-auto px-4 text-center">
             <h3 className="text-2xl font-bold mb-4">Follow Us</h3>
             <div className="flex justify-center gap-6">

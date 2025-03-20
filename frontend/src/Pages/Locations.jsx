@@ -2,9 +2,9 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
 import mlr from "../assets/pttce.jpg";
-import mapPic1 from "../assets/ss.png"
-import mapPic2 from "../assets/ss.png"
-import mapPic3 from "../assets/ss.png"
+import mapPic1 from "../assets/pttce.jpg"
+import mapPic2 from "../assets/pttce.jpg"
+import mapPic3 from "../assets/pttce.jpg"
 export default function Locations() {
   const navigate = useNavigate();
   const mapRef = useRef(null);
