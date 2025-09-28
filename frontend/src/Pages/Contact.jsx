@@ -1,25 +1,41 @@
 import React, { useState } from "react";
-import Navbar from "../Components/Navbar.jsx";
-import {contactRoute} from "../API/Routes.js";
-import { useLocation } from "react-router-dom";
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import Navbar from "../Components/Navbar.jsx";
+import logo from "../assets/logo.png";
+import {contactRoute} from "../API/Routes.js";
+import { FaUser, FaUsers, FaSchool, FaChalkboardTeacher, FaCalendarAlt, FaBuilding, FaUserPlus, FaHandHoldingUsd, FaBriefcase, FaEnvelope, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 export default function Contact() {
-  const location = useLocation();
-  const number = location.state.number;
-  const addr = location.state.addr;
-  const email = location.state.email;
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
+    center: "",
+    contactType: "",
   });
 
-  const [loading, setLoading] = useState(false);
+  const contactTypes = [
+    { label: "Athlete", icon: <FaUser /> },
+    { label: "Sports Team", icon: <FaUsers /> },
+    { label: "Academy", icon: <FaSchool /> },
+    { label: "Coach", icon: <FaChalkboardTeacher /> },
+    { label: "Event Organiser", icon: <FaCalendarAlt /> },
+    { label: "Corporate", icon: <FaBuilding /> },
+    { label: "New Member", icon: <FaUserPlus /> },
+    { label: "Sponsor", icon: <FaHandHoldingUsd /> },
+    { label: "Career Seeker", icon: <FaBriefcase /> },
+  ];
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleContactType = (type) => {
+    setFormData({ ...formData, contactType: type });
+  };
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -46,187 +62,205 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
-    <div className="min-h-screen w-full flex flex-col relative">
-      <div className="fixed top-0 left-0 right-0 z-50 bg-blue-900">
+    <div className="min-h-screen w-full flex flex-col relative bg-gray-50">
+      {/* Google Fonts */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+      
+      {/* Navbar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
         <Navbar />
       </div>
 
-      <div className="w-full mt-16">
-        {/* Hero Section */}
-        <div className="relative h-96">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-600/80 z-10" />
-          <img
-            src="/api/placeholder/1920/1080"
-            alt="Contact Hero"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white px-4">
-            <h1 className="text-5xl font-bold mb-6 text-center">Contact Us</h1>
-            <p className="text-xl max-w-2xl text-center">
-              Have questions? We're here to help. Reach out to our team and we'll get back to you shortly.
-            </p>
+      {/* Page Heading */}
+      <div className="mt-16 py-20 text-center px-4">
+        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 uppercase tracking-wide" style={{ fontFamily: 'Oswald, sans-serif' }}>
+          REACH OUT TO US
+        </h1>
+        <p className="text-xl text-gray-700 mt-3" style={{ fontFamily: 'Lora, serif' }}>
+          Choose your category, fill in details, and get in touch with us.
+        </p>
+      </div>
+
+      {/* Two-column layout */}
+      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-20 px-4 pb-20 pt-10">
+        {/* Left: Are You Section */}
+        <div className="md:w-1/2 flex flex-col items-start gap-8">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 uppercase tracking-wide" style={{ fontFamily: 'Oswald, sans-serif' }}>Are You?</h2>
+          <div className="grid grid-cols-2 gap-6 w-full">
+            {contactTypes.map(({ label, icon }) => (
+              <button
+                key={label}
+                onClick={() => handleContactType(label)}
+                className={`flex items-center gap-4 px-6 py-6 rounded-2xl border text-lg font-medium transition-all shadow-md w-full ${
+                  formData.contactType === label
+                    ? "bg-blue-900 text-white shadow-lg"
+                    : "bg-white text-gray-800 hover:bg-gray-100"
+                }`}
+                style={{ fontFamily: 'Lora, serif' }}
+              >
+                <div className="text-3xl">{icon}</div>
+                <span>{label}</span>
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Contact Form Section */}
-        <div className="w-full py-14 bg-white">
-          <div className="max-w-4xl mx-auto p-[80px] rounded-3xl shadow-2xl">
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    required
-                  />
-                </div>
-              </div>
-
+        {/* Right: Contact Form */}
+        <div className="md:w-1/2 bg-white p-12 rounded-3xl shadow-2xl">
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
+                <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
+                  Full Name
                 </label>
                 <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
+                  type="text"
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                  style={{ fontFamily: 'Lora, serif' }}
                   required
                 />
               </div>
-
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
+                <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
+                  Email Address
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
-                  rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                  style={{ fontFamily: 'Lora, serif' }}
                   required
                 />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-blue-900 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-800 transition-colors"
-                disabled={loading}
-              >
-                {loading ? (
-                  <span className="flex justify-center items-center">
-                    <svg
-                      className="animate-spin h-5 w-5 mr-3 text-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 4v1m0 14v1m8-8h1m-14 0h1M4.22 4.22l.707.707m12.727 12.727l.707.707m0-12.728l-.707.707m-12.727 0l-.707.707"
-                      />
-                    </svg>
-                    Sending...
-                  </span>
-                ) : (
-                  "Send Message"
-                )}
-              </button>
-            </form>
-          </div>
-        </div>
-
-        {/* Contact Information Section */}
-        <div className="w-full py-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-12">
-              <div className="text-center shadow-2xl py-[80px] rounded-3xl hover:scale-105 transition-all ease-in-out hover:cursor-pointer">
-                <div className="text-3xl mb-4">📍</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Visit Us</h3>
-                <p className="text-gray-600">{addr}</p>
-              </div>
-              <div className="text-center shadow-2xl py-[80px] rounded-3xl hover:scale-105 transition-all ease-in-out hover:cursor-pointer">
-                <div className="text-3xl mb-4">📞</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Call Us</h3>
-                <p className="text-gray-600">{number}</p>
-              </div>
-              <div
-  className="text-center shadow-2xl py-[80px] rounded-3xl hover:scale-105 transition-all ease-in-out hover:cursor-pointer"
-  onClick={() => window.open(`mailto:${email}`, '_blank')}
->
-  <div className="text-3xl mb-4">✉️</div>
-  <h3 className="text-xl font-bold text-blue-900 mb-2">Email Us</h3>
-</div>
-
-              <div
-                className="text-center shadow-2xl py-[80px] rounded-3xl hover:scale-105 transition-all ease-in-out hover:cursor-pointer"
-                onClick={() => window.open(`https://wa.me/${number}`, '_blank')}
-              >
-                <div className="text-3xl mb-4">💬</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">WhatsApp</h3>
-              </div>
-              <div
-                className="text-center shadow-2xl py-[80px] rounded-3xl hover:scale-105 transition-all ease-in-out hover:cursor-pointer"
-                onClick={() => window.open('https://www.instagram.com', '_blank')}
-              >
-                <div className="text-3xl mb-4">📱</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Instagram</h3>
-              </div>
-              <div
-                className="text-center shadow-2xl py-[80px] rounded-3xl hover:scale-105 transition-all ease-in-out hover:cursor-pointer"
-                onClick={() => window.open('https://www.facebook.com', '_blank')}
-              >
-                <div className="text-3xl mb-4">🌐</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Facebook</h3>
               </div>
             </div>
-          </div>
+
+            <div>
+              <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                style={{ fontFamily: 'Lora, serif' }}
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
+                Center
+              </label>
+              <select
+                name="center"
+                value={formData.center}
+                onChange={handleChange}
+                className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                style={{ fontFamily: 'Lora, serif' }}
+                required
+              >
+                <option value="">Select a center</option>
+                <option value="Mangalore">Mangalore</option>
+                <option value="Surathkal">Surathkal</option>
+                <option value="Manipal">Manipal</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
+                Message
+              </label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={6}
+                className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                style={{ fontFamily: 'Lora, serif' }}
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-900 text-white px-10 py-5 rounded-2xl text-xl font-semibold hover:bg-blue-800 transition-colors flex items-center justify-center gap-3 uppercase tracking-wider"
+              style={{ fontFamily: 'Oswald, sans-serif' }}
+              disabled={loading}
+            >
+              {loading && (
+                <svg
+                  className="animate-spin h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                  ></path>
+                </svg>
+              )}
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+
+          </form>
         </div>
-        <footer className="w-full bg-blue-900 text-white py-12">
-          <div className="w-full max-w-7xl mx-auto px-4 text-center">
-            <h3 className="text-2xl font-bold mb-4">SportCenter</h3>
-            <p className="text-blue-200">© 2024 SportCenter. All rights reserved.</p>
-          </div>
-        </footer>
       </div>
+
+    {/* Logo + Social Media at bottom */}
+<div className="flex flex-col items-center py-24 bg-gray-50">
+  {/* Logo */}
+  <img
+    src={logo}
+    alt="Center Logo"
+    className="w-96 md:w-[500px] h-auto mb-10 shadow-lg"
+  />
+
+  {/* Social icons just below the logo */}
+  <div className="flex gap-10 text-4xl text-blue-900">
+    <a href="mailto:hannibalj588@gmail.com">
+      <FaEnvelope className="hover:text-blue-600 transition-colors" />
+    </a>
+    <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+      <FaInstagram className="hover:text-pink-600 transition-colors" />
+    </a>
+    <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+      <FaFacebookF className="hover:text-blue-700 transition-colors" />
+    </a>
+    <a href="https://www.youtube.com" target="_blank" rel="noreferrer">
+      <FaYoutube className="hover:text-red-600 transition-colors" />
+    </a>
+  </div>
+</div>
+
+
+      {/* Footer */}
+      <footer className="w-full bg-gray-300  py-6">
+        <div className="max-w-7xl mx-auto px-4 text-center" style={{ fontFamily: 'Lora, serif' }}>
+          <p>
+            © 2024 Padukone Table Tennis Center for Excellence. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
-
-

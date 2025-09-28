@@ -2,9 +2,9 @@
 import nodemailer from "nodemailer";
 
 export const contact = async (req, res, next) => {
-  const { message, name, email, phone} = req.body;
+  const { message, name, email, phone, center, contactType} = req.body;
 
-  if (!message || !name || !email || !phone) {
+  if (!message || !name || !email || !phone || !center || !contactType) {
     return res.json({ msg: "All fields are required", status: false });
   }
 
@@ -13,6 +13,8 @@ export const contact = async (req, res, next) => {
   Name: ${name}
   Phone: ${phone}
   Email: ${email}
+  Contact Type : ${contactType}
+  Center to contact : ${center} center
   Message: ${message}`;
   
 
