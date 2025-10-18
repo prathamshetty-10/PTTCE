@@ -2,42 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
 import { AiFillStar } from "react-icons/ai";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import homepic1 from "../assets/homepic1.jpg";
 import vdo from "../assets/transformvdo.mp4"
 import mlr from "../assets/pttce.jpg";
 import logo from "../assets/logo.png";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-const CustomArrow = ({ direction, onClick }) => (
-  <button
-    onClick={onClick}
-    className={`absolute top-1/2 transform -translate-y-1/2 z-20 ${
-      direction === "prev" ? "left-4" : "right-4"
-    } bg-white/80 hover:bg-white text-blue-900 rounded-3xl p-4 transition-all opacity-10 hover:opacity-100`}
-  >
-    {direction === "prev" ? <FaChevronLeft size={24} /> : <FaChevronRight size={24} />}
-  </button>
-);
 
 export default function Home() {
   const navigate = useNavigate();
-
-  const settings = {
-    dots: true,
-    infinite: true, // Ensures the loop is infinite
-    speed: 500, // Speed of the slide transition (in ms)
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    prevArrow: <CustomArrow direction="prev" />,
-    nextArrow: <CustomArrow direction="next" />,
-    pauseOnHover: false,
-  };
-
   return (
     <div className="min-h-screen w-full flex flex-col relative">
       {/* Navbar */}
@@ -48,8 +19,6 @@ export default function Home() {
       <div className="w-full mt-16">
         {/* Hero Slider */}
         <div className="w-full">
-          <Slider {...settings}>
-            {/* First Slide with Video Background */}
             <div className="relative">
               <div className="w-full h-[91vh] relative">
                 <video
@@ -89,23 +58,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Other Slides */}
-            {[homepic1, homepic1].map((image, index) => (
-              <div key={index} className="relative">
-                <img
-                  src={image}
-                  alt={`Slide ${index + 2}`}
-                  className="w-full h-[91vh] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/10 z-10" />
-                <div className="absolute bottom-8 left-8 text-white z-20">
-                  <h2 className="text-4xl font-bold mb-2">Dummy Heading {index + 2}</h2>
-                  <p className="text-lg">This is a dummy description for slide {index + 2}.</p>
-                </div>
-              </div>
-            ))}
-          </Slider>
         </div>
 
         {/* About Section */}
