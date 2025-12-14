@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import Navbar from "../Components/Navbar.jsx";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo2.png";
 import {contactRoute} from "../API/Routes.js";
-import { FaUser, FaUsers, FaSchool, FaChalkboardTeacher, FaCalendarAlt, FaBuilding, FaUserPlus, FaHandHoldingUsd, FaBriefcase, FaEnvelope, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
+import { FaUser, FaUsers, FaSchool, FaCalendarAlt, FaBuilding, FaUserPlus, FaHandHoldingUsd, FaBriefcase, FaEnvelope, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,7 +12,6 @@ export default function Contact() {
     email: "",
     phone: "",
     message: "",
-    center: "",
     contactType: "",
   });
 
@@ -20,12 +19,13 @@ export default function Contact() {
     { label: "Athlete", icon: <FaUser /> },
     { label: "Sports Team", icon: <FaUsers /> },
     { label: "Academy", icon: <FaSchool /> },
-    { label: "Coach", icon: <FaChalkboardTeacher /> },
+    { label: "School", icon: <FaSchool/> },
     { label: "Event Organiser", icon: <FaCalendarAlt /> },
     { label: "Corporate", icon: <FaBuilding /> },
     { label: "New Member", icon: <FaUserPlus /> },
     { label: "Sponsor", icon: <FaHandHoldingUsd /> },
     { label: "Career Seeker", icon: <FaBriefcase /> },
+    { label: "Other", icon: <FaUser/> },
   ];
 
   const handleChange = (e) => {
@@ -39,6 +39,12 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    if (!formData.contactType) {
+      toast.error("Please select who you are");
+      setLoading(false);
+      return;
+    }
+
 
     try {
       const { data } = await axios.post(`${contactRoute}`, formData);
@@ -63,7 +69,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col relative bg-gray-50">
+    <div className="min-h-screen w-full flex flex-col relative  bg-gradient-to-br from-blue-100 via-white to-blue-200 ">
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -76,7 +82,7 @@ export default function Contact() {
 
       {/* Page Heading */}
       <div className="mt-16 py-20 text-center px-4">
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 uppercase tracking-wide" style={{ fontFamily: 'Oswald, sans-serif' }}>
+        <h1 className="text-5xl md:text-6xl font-bold text-blue-900 uppercase tracking-wide" style={{ fontFamily: 'Oswald, sans-serif' }}>
           REACH OUT TO US
         </h1>
         <p className="text-xl text-gray-700 mt-3" style={{ fontFamily: 'Lora, serif' }}>
@@ -88,13 +94,14 @@ export default function Contact() {
       <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-20 px-4 pb-20 pt-10">
         {/* Left: Are You Section */}
         <div className="md:w-1/2 flex flex-col items-start gap-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 uppercase tracking-wide" style={{ fontFamily: 'Oswald, sans-serif' }}>Are You?</h2>
+          <h2 className="text-4xl font-bold text-blue-900 mb-6 uppercase tracking-wide" style={{ fontFamily: 'Oswald, sans-serif' }}>Are You?</h2>
           <div className="grid grid-cols-2 gap-6 w-full">
             {contactTypes.map(({ label, icon }) => (
               <button
                 key={label}
                 onClick={() => handleContactType(label)}
-                className={`flex items-center gap-4 px-6 py-6 rounded-2xl border text-lg font-medium transition-all shadow-md w-full ${
+                className={`flex items-center gap-4 px-6 py-6 rounded-2xl border text-lg font-medium transition-all shadow-md w-full 
+    border-2 border-blue-900 ${
                   formData.contactType === label
                     ? "bg-blue-900 text-white shadow-lg"
                     : "bg-white text-gray-800 hover:bg-gray-100"
@@ -109,11 +116,12 @@ export default function Contact() {
         </div>
 
         {/* Right: Contact Form */}
-        <div className="md:w-1/2 bg-white p-12 rounded-3xl shadow-2xl">
+        <div className="md:w-1/2 bg-white p-12 rounded-3xl shadow-2xl 
+    border-2 border-blue-900">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
+                <label className="block text-base font-medium mb-2" style={{ fontFamily: 'Lora, serif' }}>
                   Full Name
                 </label>
                 <input
@@ -121,13 +129,14 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                  className="w-full px-5 py-2 rounded-xl 
+    border-2 border-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
                   style={{ fontFamily: 'Lora, serif' }}
                   required
                 />
               </div>
               <div>
-                <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
+                <label className="block text-base font-medium  mb-2" style={{ fontFamily: 'Lora, serif' }}>
                   Email Address
                 </label>
                 <input
@@ -135,7 +144,8 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                  className="w-full px-5 py-2 rounded-xl 
+    border-2 border-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
                   style={{ fontFamily: 'Lora, serif' }}
                   required
                 />
@@ -143,7 +153,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
+              <label className="block text-base font-medium  mb-2" style={{ fontFamily: 'Lora, serif' }}>
                 Phone Number
               </label>
               <input
@@ -151,33 +161,17 @@ export default function Contact() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                className="w-full px-5 py-2 rounded-xl 
+    border-2 border-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
                 style={{ fontFamily: 'Lora, serif' }}
                 required
               />
             </div>
 
-            <div>
-              <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
-                Center
-              </label>
-              <select
-                name="center"
-                value={formData.center}
-                onChange={handleChange}
-                className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
-                style={{ fontFamily: 'Lora, serif' }}
-                required
-              >
-                <option value="">Select a center</option>
-                <option value="Mangalore">Mangalore</option>
-                <option value="Surathkal">Surathkal</option>
-                <option value="Manipal">Manipal</option>
-              </select>
-            </div>
+            
 
             <div>
-              <label className="block text-base font-medium text-gray-700 mb-2" style={{ fontFamily: 'Lora, serif' }}>
+              <label className="block text-base font-medium  mb-2" style={{ fontFamily: 'Lora, serif' }}>
                 Message
               </label>
               <textarea
@@ -185,7 +179,8 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={6}
-                className="w-full px-5 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                className="w-full px-5 py-2 rounded-xl 
+    border-2 border-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg resize-none"
                 style={{ fontFamily: 'Lora, serif' }}
                 required
               />
@@ -225,40 +220,167 @@ export default function Contact() {
           </form>
         </div>
       </div>
-
-    {/* Logo + Social Media at bottom */}
-<div className="flex flex-col items-center py-24 bg-gray-50">
-  {/* Logo */}
-  <img
+      {/* logo*/}
+<div className="flex items-center justify-center">
+<img
     src={logo}
     alt="Center Logo"
-    className="w-96 md:w-[500px] h-auto mb-10 shadow-lg"
+    className="
+              
+    border-2 border-blue-900
+      w-11/12 sm:w-3/4 md:w-2/3  // responsive widths for mobile, tablet, desktop
+      h-auto                       // maintain aspect ratio
+      max-h-[280px]                 // optional max height
+      object-cover mb-10 shadow-xl rounded-2xl
+       transition-all duration-300
+    "
   />
+  </div>
+    <div className="max-w-7xl mx-auto px-4 pb-24 pt-12 md:pt-24">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center items-stretch">
 
-  {/* Social icons just below the logo */}
-  <div className="flex gap-10 text-4xl text-blue-900">
-    <a href="mailto:hannibalj588@gmail.com">
-      <FaEnvelope className="hover:text-blue-600 transition-colors" />
-    </a>
-    <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-      <FaInstagram className="hover:text-pink-600 transition-colors" />
-    </a>
-    <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-      <FaFacebookF className="hover:text-blue-700 transition-colors" />
-    </a>
-    <a href="https://www.youtube.com" target="_blank" rel="noreferrer">
-      <FaYoutube className="hover:text-red-600 transition-colors" />
-    </a>
+    {/* Mail Us */}
+    <div className="flex flex-col">
+      <h3
+        className="text-3xl font-bold text-blue-900 mb-6 uppercase"
+        style={{ fontFamily: "Oswald, sans-serif" }}
+      >
+        Mail Us
+      </h3>
+
+    <a
+  href="mailto:padukonecentreforsports24@gmail.com"
+  className="
+    flex flex-col justify-center
+    w-full h-full
+    bg-white
+    border-2 border-blue-900
+    rounded-2xl
+    px-10 py-10
+    text-xl font-semibold tracking-wider
+    text-blue-900
+    hover:bg-blue-50
+    transition
+  "
+  style={{ fontFamily: "Oswald, sans-serif" }}
+>
+  <span>📧 padukonecentreforsports24</span>
+  <span className="mt-1">@gmail.com</span>
+</a>
+
+
+    </div>
+
+    {/* Call Us */}
+    <div className="flex flex-col">
+      <h3
+        className="text-3xl font-bold text-blue-900 mb-6 uppercase"
+        style={{ fontFamily: "Oswald, sans-serif" }}
+      >
+        Call Us
+      </h3>
+
+      <a
+  href="tel:+919481675900"
+  className="
+    flex flex-col justify-center
+    w-full h-full
+    bg-white
+    border-2 border-blue-900
+    rounded-2xl
+    px-10 py-10
+    text-xl font-semibold  tracking-wider
+    text-blue-900
+    hover:bg-blue-50
+    transition
+    md:pointer-events-none
+    md:cursor-not-allowed
+  "
+  style={{ fontFamily: "Oswald, sans-serif" }}
+>
+  📞 +91 9481675900
+  <span className=" mt-3 text-xl tracking-normal">
+    Ashwin Kumar Padukone
+  </span>
+</a>
+
+    </div>
+
+    {/* Social Media */}
+    <div className="flex flex-col">
+      <h3
+        className="text-3xl font-bold text-blue-900 mb-6 uppercase"
+        style={{ fontFamily: "Oswald, sans-serif" }}
+      >
+        Our Social Media
+      </h3>
+
+     <div className="flex flex-col gap-8">
+  
+  <a
+  href="https://www.instagram.com/padukonecenterforsports"
+  target="_blank"
+  rel="noreferrer"
+  className="
+    flex items-start
+    bg-white
+    border-2 border-blue-900
+    rounded-2xl
+    px-8 py-4
+    text-lg font-semibold uppercase tracking-wider
+    text-blue-900
+    hover:bg-blue-50
+    transition
+  "
+  style={{ fontFamily: "Oswald, sans-serif" }}
+>
+  <FaInstagram className="text-pink-600 text-3xl mr-4" />
+  <span className="normal-case tracking-normal">
+    @padukonecenterforsports
+  </span>
+</a>
+
+
+   <a
+  href="https://www.instagram.com/pttce"
+  target="_blank"
+  rel="noreferrer"
+  className="
+    flex items-start
+    bg-white
+    border-2 border-blue-900
+    rounded-2xl
+    px-8 py-4
+    text-lg font-semibold uppercase tracking-wider
+    text-blue-900
+    hover:bg-blue-50
+    transition
+  "
+  style={{ fontFamily: "Oswald, sans-serif" }}
+>
+  <FaInstagram className="text-pink-600 text-3xl mr-4" />
+  <span className="normal-case tracking-normal">
+    @pttce
+  </span>
+</a>
+
+</div>
+
+
+    </div>
+
   </div>
 </div>
 
 
-      {/* Footer */}
-      <footer className="w-full bg-gray-300  py-6">
-        <div className="max-w-7xl mx-auto px-4 text-center" style={{ fontFamily: 'Lora, serif' }}>
-          <p>
-            © 2024 Padukone Table Tennis Center for Excellence. All rights reserved.
-          </p>
+
+       {/* Footer */}
+      <footer className="w-full bg-blue-900 py-6 text-white">
+        <div
+          className="max-w-7xl mx-auto px-4 text-center"
+          style={{ fontFamily: "Lora, serif" }}
+        >
+          © 2025 Padukone Centre Of Sports. All rights reserved.
         </div>
       </footer>
     </div>
