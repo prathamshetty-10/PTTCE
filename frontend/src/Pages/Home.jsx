@@ -16,6 +16,7 @@ import ach9 from "../assets/ach9.jpeg";
 import ach10 from "../assets/ach10.jpeg";
 import ach11 from "../assets/ach11.jpeg";
 import ach12 from "../assets/ach12.jpeg";
+import ach13 from "../assets/ach13.jpeg";
 
 import gal2 from "../assets/gal2.jpg";
 import gal3 from "../assets/gal3.jpg";
@@ -130,6 +131,7 @@ export default function Home() {
 
   { 
     img: ach6, 
+    alter: ach13,
     desc: "PTTCE student Thara N represented SBI Karnataka at the SBI All India Inter-Circle Table Tennis Tournament 2025–26 in Mumbai, winning two Silvers (Women’s Team & Doubles) and one Bronze (Mixed Doubles)." 
   },
 
@@ -298,38 +300,51 @@ export default function Home() {
             </div>
           </div>
         </div>
-         {/* Achievements Slider */}
+        {/* Achievements Slider */}
 <div className="w-full py-16 mt-[10px]">
-  <div className="max-w-[95vw] mx-auto px-2">
+  <div className="max-w-[85vw] mx-auto px-2">
 
     {/* Heading */}
     <div className="text-center mb-12">
       <h2
-        className="text-5xl font-bold mb-6 text-blue-900"
+        className="text-5xl font-bold text-blue-900"
         style={{ fontFamily: "Oswald, sans-serif" }}
       >
-       Moments of Excellence
+        Moments of Excellence
       </h2>
-      
     </div>
 
     <Slider {...sliderSettings1}>
       {achievements.map((item, index) => (
         <div key={index} className="px-4">
-          <div className="relative w-full h-[70vh] rounded-2xl overflow-hidden shadow-xl">
 
-            {/* Main Image */}
-            <img
-              src={item.img}
-              alt={`Achievement ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
+          {/* Card */}
+          <div className="w-full h-[78vh] md:h-[80vh] bg-white rounded-2xl  overflow-hidden flex flex-col border border-blue-900">
 
-            {/* Description Overlay */}
+            {/* Image – desktop & tablet */}
+<div className="w-full h-[65%] md:h-[80%] hidden sm:block">
+  <img
+    src={item.img}
+    alt={`Achievement ${index + 1}`}
+    className="w-full h-full object-cover"
+  />
+</div>
+
+{/* Image – phone */}
+<div className="w-full h-[65%] block sm:hidden">
+  <img
+    src={item.alter || item.img}
+    alt={`Achievement ${index + 1}`}
+    className="w-full h-full object-cover"
+  />
+</div>
+
+
+            {/* Text – guaranteed visible */}
             {item.desc && item.desc.trim() !== "" && (
-              <div className="absolute bottom-0 w-full bg-black/50 backdrop-blur-sm p-5">
+              <div className="flex-1 px-6 py-5 flex items-center justify-center">
                 <p
-                  className="text-white text-center text-lg md:text-xl font-medium leading-relaxed"
+                  className="text-gray-800 text-center text-lg md:text-xl leading-relaxed"
                   style={{ fontFamily: "Lora, serif", whiteSpace: "pre-line" }}
                 >
                   {item.desc}
@@ -341,8 +356,11 @@ export default function Home() {
         </div>
       ))}
     </Slider>
+
   </div>
 </div>
+
+
 
        
 
@@ -358,7 +376,7 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
               {reviews.map((review, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-blue-900">
                   <h3 className="text-2xl font-semibold mb-2 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>{review.name}</h3>
                   <div className="flex items-center text-yellow-500 text-lg font-medium mb-4">
                     {[...Array(review.rating)].map((_, i) => <AiFillStar key={i} />)}
@@ -417,7 +435,7 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow duration-300">
+                <div key={index} className="bg-white shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow duration-300 border border-blue-900">
                   <h3 className="text-2xl font-semibold mb-2 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>{faq.question}</h3>
                   <p className="text-gray-600" style={{ fontFamily: 'Lora, serif' }}>{faq.answer}</p>
                 </div>
