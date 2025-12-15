@@ -192,23 +192,24 @@ export default function Home() {
   ]
 
   const reviews = [
-    {
-      name: "Shashank Bhat",
-      rating: 5,
-      review: "PTTCE has truly raised the bar. The coaching is top-notch, the facilities are excellent, and the overall training experience is outstanding. Highly recommended for anyone serious about improving their game"
-    },
+    
     {
       name: "Dr. Keshav Prabhu",
       rating: 5,
       review: "PTTCE is excellent academy for learning table tennis sport. Ashwin Sir is the dedicated teacher, coach, guide and trainer. Absolutely fantastic facilities and fitness coaching for students."
     },
     {
-      name: "Elson Noronha",
+      name: "Pratham Shetty",
+      rating: 5,
+      review: "PTTCE has truly raised the bar. The coaching is top-notch, the facilities are excellent, and the overall training experience is outstanding. Highly recommended for anyone serious about improving their game"
+    },
+    {
+      name: "Varun Prabhu",
       rating: 5,
       review: "A very Good Academy For Aspiring Table tennis players starting from professional level to beginner level. Ashwin Sir Is Just Excellent and his way of teaching kids and Adults Is Beyond Imagination."
     },
     {
-      name: "Snehal Prabhu",
+      name: "Ansh Sureshan",
       rating: 5,
       review: "Looking for a Professional Academy along with The Best All Round Dedicated Coach for ur Ward - Ur at rgt place. Along with His Superb team. They are Fantastic."
     },
