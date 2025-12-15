@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar.jsx";
 // Placeholder images
 import about1 from "../assets/gal10.jpg";
 import about2 from "../assets/sportsgen.jpg";
-import founderImg1 from "../assets/homeAbout.jpg"
+import founderImg1 from "../assets/founder2.jpeg"
 import founderImg2 from "../assets/founder.jpeg"
 import assistantCoachImg1 from "../assets/assistant3.jpg"
 import Slider from "react-slick";
@@ -12,6 +12,24 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import face1 from "../assets/face1.jpeg"
 import face2 from "../assets/face2.jpeg"
 import face3 from "../assets/face3.jpeg"
+import face4 from "../assets/face4.jpeg"
+import face5 from "../assets/face5.jpeg"
+import face6 from "../assets/face6.jpeg"
+import face7 from "../assets/face7.jpeg"
+import face8 from "../assets/face8.jpeg"
+import face9 from "../assets/face9.jpeg"
+import face11 from "../assets/face11.jpeg"
+import face13 from "../assets/face13.jpeg"
+import face14 from "../assets/face14.jpeg"
+import face15 from "../assets/face15.jpeg"
+import face16 from "../assets/face16.jpeg"
+import face17 from "../assets/face17.jpg"
+import face18 from "../assets/face18.jpeg"
+import face19 from "../assets/face19.jpeg"
+import face20 from "../assets/face20.jpeg"
+import face21 from "../assets/face21.jpeg"
+import face22 from "../assets/face22.jpeg"
+import face23 from "../assets/face23.jpeg"
 
 
 const CustomArrow = ({ direction, onClick }) => (
@@ -29,12 +47,12 @@ const CustomArrow = ({ direction, onClick }) => (
 
 const achievers = [
 {
-name: "Lakshya Sen",
+name: "Aditya S M",
 title: "Gold Medalist, Commonwealth Games 2022",
 image: face1,
 },
 {
-name: "Maana Patel",
+name: "Elson Noronha",
 title: "Olympian, Tokyo Olympics 2020",
 image: face2,
 },
@@ -44,14 +62,95 @@ title: "Olympian, Tokyo Olympics 2020",
 image: face3,
 },
 {
-name: "Archana Kamath",
-title: "World Rank #4, Women’s Doubles 2022",
-image: assistantCoachImg1,
+name: "Vinay Pranav",
+title: "Olympian, Tokyo Olympics 2020",
+image: face9,
 },
 {
-name: "Apurvi Chandela",
+name: "P Parindran",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face6,
+},
+{
+name: "Ishani Harish",
 title: "Olympian, Tokyo Olympics 2020",
-image: assistantCoachImg1,
+image: face7,},
+{
+name: "Abhijith Pai",
+title: "Olympian, Tokyo Olympics 2020",
+image: face4,
+},
+{
+name: "Coral Lobo",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face5,
+},
+{
+name: "Sathwika",
+title: "Olympian, Tokyo Olympics 2020",
+image: face8,
+},
+
+
+{
+name: "Ananya Prabhu",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face11,
+},
+{
+name: "Sanman Malpe",
+title: "Olympian, Tokyo Olympics 2020",
+image: face13,
+},
+{
+name: "Prashasthi Shetty",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face14,
+},
+{
+name: "Poornima Raj",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face15,
+},
+{
+name: "Guruprasad",
+title: "Olympian, Tokyo Olympics 2020",
+image: face16,
+},
+{
+name: "Vian Mascarenhas",
+title: "Olympian, Tokyo Olympics 2020",
+image: face17,
+},
+{
+name: "Diya",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face18,
+},
+{
+name: "Aarna Sadotra",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face19,
+},
+{
+name: "Latha Ashok",
+title: "Olympian, Tokyo Olympics 2020",
+image: face20,
+},
+{
+name: "Clara",
+title: "Olympian, Tokyo Olympics 2020",
+image: face21,
+},
+{
+name: "Thara",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face22,
+},
+{
+name: "Riona Mendonca",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face23,
 },
 ];
 
@@ -61,8 +160,10 @@ dots: false,
 infinite: true,
 speed: 600,
 slidesToShow: 4,
-slidesToScroll: 1,
-autoplay: false,
+slidesToScroll: 2,
+autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
 arrows: true,
 prevArrow: <CustomArrow direction="prev" />,
 nextArrow: <CustomArrow direction="next" />,
@@ -340,9 +441,7 @@ className="absolute inset-0 w-full h-full object-cover"
 <h3 className="text-xl font-semibold mb-2 text-white">
 {item.name}
 </h3>
-<p className="text-sm text-blue-100 leading-snug min-h-[2.75rem]">
-{item.title}
-</p>
+
 </div>
 </div>
 </div>

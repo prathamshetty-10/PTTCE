@@ -7,6 +7,8 @@ import school1 from "../assets/school1.jpeg";
 import school2 from "../assets/school2.jpeg";
 import school3 from "../assets/school3.jpeg";
 import school4 from "../assets/gal4.jpg";
+import school5 from "../assets/school5.jpeg";
+import school6 from "../assets/school6.jpeg";
 import logo from "../assets/pttcelogo.png"
 
 export default function SchoolTraining() {
@@ -24,6 +26,18 @@ export default function SchoolTraining() {
       place: "Mangaluru",
       state: "Karnataka",
       image: school2,
+    },
+    {
+      name: "St. Agnes School",
+      place: "Mangaluru",
+      state: "Karnataka",
+      image: school6,
+    },
+    {
+      name: "St Aloysius Gonzaga",
+      place: "Mangaluru",
+      state: "Karnataka",
+      image: school5,
     },
     {
       name: "Mount Carmel School",

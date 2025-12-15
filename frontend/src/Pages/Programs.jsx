@@ -30,6 +30,7 @@ export default function Programs() {
   const navigate = useNavigate();
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const sliderSectionRef = useRef(null);
 
   const programs = [
     {
@@ -98,7 +99,7 @@ export default function Programs() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
-    pauseOnHover: false,
+    pauseOnHover: true,
     beforeChange: (current, next) => setActiveIndex(next),
     prevArrow: <CustomArrow direction="prev" />,
     nextArrow: <CustomArrow direction="next" />,
@@ -141,7 +142,15 @@ export default function Programs() {
         {programs.map((program, index) => (
           <button
             key={program.id}
-            onClick={() => sliderRef.current.slickGoTo(index)}
+            onClick={() => {
+              // Scroll to the slider smoothly
+              const navbarHeight = 80; // adjust if your navbar height is different
+    const sliderTop = sliderSectionRef.current.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: sliderTop - navbarHeight,
+      behavior: "smooth",
+    });
+              sliderRef.current.slickGoTo(index)}}
             className={`px-6 py-2 rounded-full font-semibold transition-all ${
               activeIndex === index
                 ? "bg-blue-900 text-white shadow-lg"
@@ -155,7 +164,7 @@ export default function Programs() {
       </div>
 
       {/* Slider */}
-      <div className="mb-20">
+      <div  ref={sliderSectionRef} className="mb-20">
         <Slider ref={sliderRef} {...settings}>
           {programs.map((program) => (
             <div key={program.id} className="relative w-full h-[91vh]">

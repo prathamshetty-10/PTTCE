@@ -5,21 +5,25 @@ import { AiFillStar } from "react-icons/ai";
 import vdo from "../assets/transformvdo2.mp4";
 
 // Individual imports for achievement images
-import bgImg from '../assets/achBG3.jpg';
 import ach2 from "../assets/ach2.jpg";
 import ach3 from "../assets/ach3.jpg";
 import ach4 from "../assets/ach4.jpg";
 import ach5 from "../assets/ach5.jpg";
-import ach6 from "../assets/ach6.jpg";
+import ach6 from "../assets/ach6.jpeg";
 import ach7 from "../assets/ach7.jpg";
 import ach8 from "../assets/ach8.jpg";
+import ach9 from "../assets/ach9.jpeg";
+import ach10 from "../assets/ach10.jpeg";
+import ach11 from "../assets/ach11.jpeg";
+import ach12 from "../assets/ach12.jpeg";
+
 import gal2 from "../assets/gal2.jpg";
 import gal3 from "../assets/gal3.jpg";
 import gal4 from "../assets/gal4.jpg";
 import gal5 from "../assets/gal5.jpg";
 import gal6 from "../assets/gal6.jpg";
 import gal7 from "../assets/gal7.jpg";
-import gal8 from "../assets/gal8.jpg";
+import gal8 from "../assets/gal8.jpeg";
 import gal9 from "../assets/gal9.jpg";
 import gal10 from "../assets/gal10.jpg";
 import gal11 from "../assets/gal11.jpg";
@@ -28,6 +32,7 @@ import gal13 from "../assets/gal13.jpg";
 import gal14 from "../assets/sportsgen2.jpg"
 import gal15 from "../assets/gal14.jpg"
 import gal16 from "../assets/gal15.jpeg"
+import gal17 from "../assets/event18.jpeg"
 import about from "../assets/homeAbout.jpg"
 import Slider from "react-slick";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -47,17 +52,30 @@ const CustomArrow = ({ direction, onClick }) => (
 );
 
 // Inside your Home component
-const sliderSettings = {
+const sliderSettings1 = {
   infinite: true,
   speed: 600,
-  slidesToShow: 1, // shows part of side cards
+  slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
+  pauseOnHover: true,
   autoplaySpeed: 3000,
   centerMode: true,
-  centerPadding: "0px",
+  
+  // 👇 This is the main fix 
+  centerPadding: "200px",  // show left & right image partially
+
   prevArrow: <CustomArrow direction="prev" />,
   nextArrow: <CustomArrow direction="next" />,
+
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        centerPadding: "20px", // small peek in mobile
+      }
+    }
+  ]
 };
 const sliderSettings2 = {
   infinite: true,
@@ -65,6 +83,7 @@ const sliderSettings2 = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
+  pauseOnHover: true,
   autoplaySpeed: 3000,
   centerMode: true,
   
@@ -89,43 +108,64 @@ const sliderSettings2 = {
 export default function Home() {
   const navigate = useNavigate();
   const achievements = [
-    
   { 
     img: ach5, 
-    desc: "PTTCE students from Mangalore delivered an impressive performance at the Karnataka Mini Olympics 2025 held in Bengaluru. The Dakshina Kannada Boys Team secured Silver, and the Boys Doubles pair of Cahill and Rishith also won Silver. A proud display of teamwork and dedication!" 
+    desc: "PTTCE students from Mangalore excelled at the Karnataka Mini Olympics 2025 in Bengaluru. The Dakshina Kannada Boys Team won Silver, and the Boys Doubles pair Cahill & Rishith also secured Silver." 
   },
 
   { 
     img: ach2, 
-    desc: "PTTCE’s student Rachith B.H. of Ryan International School, Kulai, represented at the CISCE National U-14 Table Tennis Tournament 2025 held at Don Bosco Central School, Irinjalakuda. He finished 4th after a strong run to the Semi-Finals—a remarkable achievement in his very first national appearance!" 
+    desc: "PTTCE student Rachith B.H. of Ryan International School, Kulai, finished 4th at the CISCE National U-14 Table Tennis Tournament 2025 in Irinjalakuda, reaching the Semi-Finals in his debut national appearance." 
   },
 
   { 
     img: ach3, 
-    desc: "Our student Gahana from Delhi Public School MRPL secured 3rd place in the Under-14 Girls Singles category at the CBSE Cluster VIII Table Tennis Tournament held at SRN Mehta CBSE School, Kalaburagi. A proud moment showcasing her grit and performance!" 
+    desc: "Gahana from Delhi Public School MRPL secured 3rd place in the U-14 Girls Singles at the CBSE Cluster VIII Table Tennis Tournament in Kalaburagi." 
   },
 
   { 
     img: ach4, 
-    desc: "A proud achievement for PTTCE as our U-19 Boys team—Advaith, Jash, Vedanth, and Shreyas from Little Rock Indian School, Brahmavar—won the Silver medal at the CBSE Cluster VIII Tournament in Kalaburagi. They have now qualified for the CBSE Nationals in Gujarat!" 
+    desc: "PTTCE’s U-19 Boys team from Little Rock Indian School, Brahmavar won Silver at the CBSE Cluster VIII Tournament in Kalaburagi, qualifying for the CBSE Nationals in Gujarat." 
   },
-
 
   { 
     img: ach6, 
-    desc: "We are thrilled to share that PTTCE student Thara N represented SBI Karnataka at the SBI All India Inter-Circle Table Tennis Tournament 2025–26 in Mumbai. She returned with two Silver medals (Women’s Team and Women’s Doubles) and one Bronze (Mixed Doubles). An exceptional all-round performance!" 
+    desc: "PTTCE student Thara N represented SBI Karnataka at the SBI All India Inter-Circle Table Tennis Tournament 2025–26 in Mumbai, winning two Silvers (Women’s Team & Doubles) and one Bronze (Mixed Doubles)." 
   },
 
   { 
     img: ach7, 
-    desc: "PTTCE students of St. Theresa School, Bendur delivered outstanding performances at the AICS Inter-School Table Tennis Tournament held at Kanachur Public School. U-14 Boys secured 1st place, U-14 Girls 2nd place, U-17 Boys 1st place, and U-17 Girls 1st place." 
+    desc: "PTTCE students of St. Theresa School, Bendur delivered strong results at the AICS Inter-School Tournament, securing multiple podium finishes across U-14 and U-17 categories." 
   },
 
   { 
     img: ach8, 
-    desc: "PTTCE students representing St. Aloysius Gonzaga School, Mangalore put up a spirited performance in the AICS Inter-School Table Tennis Tournament. The Under-14 Girls team—Gianna, Joann, Advika, and Shyna—secured 2nd Runner-Up. Congratulations to the team for their dedication and teamwork!" 
-  }
+    desc: "PTTCE students from St. Aloysius Gonzaga School, Mangalore earned 2nd Runner-Up in the U-14 Girls category at the AICS Inter-School Table Tennis Tournament." 
+  },
+
+  { 
+    img: ach9, 
+    desc: "Angelina won the Bronze medal in the Under-11 Girls category at the Hospet State Ranking Tournament." 
+  },
+
+  { 
+  img: ach10, 
+  desc: "The Women’s Team from Father Muller Medical College secured 2nd place at the RGUHS Zonal Level Tournament." 
+},
+
+{ 
+  img: ach11, 
+  desc: "PTTCE students from Delhi Public School, MRPL Mangalore won the Bronze medal in the Under-17 Boys category at the CBSE Cluster TT Tournament." 
+},
+
+{ 
+  img: ach12, 
+  desc: "PTTCE students from Little Rock Indian School, Brahmavar won the Bronze medal in the Under-14 Boys category at the CBSE Cluster TT Tournament." 
+}
+
+
 ];
+
 
   const gallery = [
      
@@ -146,7 +186,8 @@ export default function Home() {
     { img: gal15, desc:"SportsGen at Sri Siddhivinayaka Residential School, Kundapura, Udupi"},
     { img: gal11, desc:""},
     { img: gal13, desc:"Head Coach Ashwin Kumar Padukone with assistant coaches Aditya, Swaroop and Sujith. "},
-    { img: gal16, desc:"Yoga Day event at Surathkal Center"}
+    { img: gal16, desc:"Yoga Day event at Surathkal Center"},
+    { img: gal17, desc:"World TT Day event at Surathkal Center"}
 
   ]
 
@@ -226,46 +267,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Achievements Slider */}
-<div className="w-full py-16 mt-[15px] md:mt-[40px] "> {/* reduced vertical padding */}
-  <div className="max-w-[95vw] mx-auto px-2"> {/* almost full width */}
-    <div className="text-center mb-12">
-      <h2 className="text-5xl font-bold mb-6 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>
-        Achievements
-      </h2>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: 'Lora, serif' }}>
-        Celebrating milestones and excellence achieved by our talented athletes.
-      </p>
-    </div>
-
-    <Slider {...sliderSettings}>
-      {achievements.map((item, index) => (
-        <div key={index} className="px-2">
-          <div className="relative w-full h-[90vh] rounded-xl overflow-hidden shadow-lg flex items-center justify-center"
-          style={{
-              backgroundImage: `url(${bgImg})`, // background image here
-              backgroundSize: "cover",      // cover the whole container
-              backgroundPosition: "center", // center it
-            }}>
-            {/* Image */}
-            <img
-              src={item.img}
-              alt={`Achievement ${index + 1}`}
-              className="max-w-full h-full object-contain "
-            />
-
-            {/* Description overlay */}
-            <div className="absolute bottom-0 w-full bg-white/90 p-6 max-h-[50%] md:max-h-[35%] overflow-y-auto">
-              <p className="text-gray-700 text-lg leading-relaxed font-medium text-center" style={{ fontFamily: 'Lora, serif' , whiteSpace: "pre-line"}}>
-                {item.desc}
-              </p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </Slider>
-  </div>
-</div>
+       
 
         {/* About Section */}
         <div className="w-full flex items-center mt-[15px] md:mt-[40px] pb-10 pt-10">
@@ -295,7 +297,78 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* Gallery Slider */}
+         {/* Achievements Slider */}
+<div className="w-full py-16 mt-[10px]">
+  <div className="max-w-[95vw] mx-auto px-2">
+
+    {/* Heading */}
+    <div className="text-center mb-12">
+      <h2
+        className="text-5xl font-bold mb-6 text-blue-900"
+        style={{ fontFamily: "Oswald, sans-serif" }}
+      >
+       Moments of Excellence
+      </h2>
+      
+    </div>
+
+    <Slider {...sliderSettings1}>
+      {achievements.map((item, index) => (
+        <div key={index} className="px-4">
+          <div className="relative w-full h-[70vh] rounded-2xl overflow-hidden shadow-xl">
+
+            {/* Main Image */}
+            <img
+              src={item.img}
+              alt={`Achievement ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+
+            {/* Description Overlay */}
+            {item.desc && item.desc.trim() !== "" && (
+              <div className="absolute bottom-0 w-full bg-black/50 backdrop-blur-sm p-5">
+                <p
+                  className="text-white text-center text-lg md:text-xl font-medium leading-relaxed"
+                  style={{ fontFamily: "Lora, serif", whiteSpace: "pre-line" }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            )}
+
+          </div>
+        </div>
+      ))}
+    </Slider>
+  </div>
+</div>
+
+       
+
+    
+
+        {/* Reviews Section */}
+        <div className="w-full py-16 mt-[10px]">
+          <div className="w-full max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold mb-6 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>
+                What People Say About Us
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+              {reviews.map((review, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-2xl font-semibold mb-2 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>{review.name}</h3>
+                  <div className="flex items-center text-yellow-500 text-lg font-medium mb-4">
+                    {[...Array(review.rating)].map((_, i) => <AiFillStar key={i} />)}
+                  </div>
+                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: 'Lora, serif' }}>{review.review}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+         {/* Gallery Slider */}
 <div className="w-full py-16 mt-[15px] md:mt-[40px]">
   <div className="max-w-[95vw] mx-auto px-2">
     <div className="text-center mb-12">
@@ -333,32 +406,8 @@ export default function Home() {
 </div>
 
 
-    
-
-        {/* Reviews Section */}
-        <div className="w-full py-16 mt-[15px] md:mt-[40px]">
-          <div className="w-full max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-6 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>
-                What People Say About Us
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {reviews.map((review, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                  <h3 className="text-2xl font-semibold mb-2 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>{review.name}</h3>
-                  <div className="flex items-center text-yellow-500 text-lg font-medium mb-4">
-                    {[...Array(review.rating)].map((_, i) => <AiFillStar key={i} />)}
-                  </div>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: 'Lora, serif' }}>{review.review}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* FAQ Section */}
-        <div className="w-full pt-16 pb-12 mt-[15px] md:mt-[40px]">
+        <div className="w-full pt-16 pb-12 mt-[10px]">
           <div className="w-full max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold mb-6 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>

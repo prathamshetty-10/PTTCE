@@ -7,12 +7,9 @@ import {
   FaBasketballBall,
   FaVolleyballBall,
   FaChild,
-  FaDumbbell,
   FaCubes,
   FaThLarge,
-  FaSwimmer,
   FaRunning,
-  FaLightbulb,
   FaGripLines,
   FaChevronLeft,
   FaChevronRight
@@ -24,7 +21,6 @@ import {
   MdOutlineSportsGymnastics,
   MdOutlineSportsEsports,
   MdOutlineSports,
-  MdOutlineFitnessCenter,
 } from "react-icons/md";
 import { GiMeditation } from "react-icons/gi";
 import { GiGymBag } from "react-icons/gi";
@@ -66,7 +62,6 @@ import stringHockeyImg from "../assets/equip72.png";
 
 import miniTTImg from "../assets/equip73.png";
 import yogaMatsImg from "../assets/equip18.png";
-import carromImg from "../assets/equip63.png";
 
 
 /* ---------- Custom Slider Arrows ---------- */
@@ -106,13 +101,12 @@ const equipmentCategories = [
   { name: "Training Equipment", icon: <GiRunningShoe /> },
 
   { name: "Pool Table", icon: <FaGamepad /> },
-  { name: "Football", icon: <MdOutlineSports /> },
+  { name: "Foosball", icon: <MdOutlineSports /> },
   { name: "Fun Boards", icon: <FaThLarge /> },
   { name: "String Hockey", icon: <FaGripLines /> },
 
-  { name: "Mini 4-in-1 TT Table", icon: <FaTableTennis /> },
+  { name: "Super Mini Tables", icon: <FaTableTennis /> },
   { name: "Yoga Mats", icon: <GiMeditation /> },
-  { name: "Carrom Boards", icon: <FaCubes /> },
 ];
 
 
@@ -121,140 +115,135 @@ const equipmentSlides = [
     title: "Table Tennis Equipment",
     image: tableTennisImg,
     description:
-      "Professional-grade table tennis tables, nets, and match-ready setups suitable for training centers, schools, and competitive play.",
+      "Our range of indoor table tennis tables is designed for consistent bounce, long-lasting durability, and professional-level play. From daily training environments to elite showcourts, we offer premium models including the Roma 24, Gold Showcourt, Automatic 2.0, Americas 16, Dark Editions, Flex, and Stealth TT Tables. Ideal for academies, institutions, clubs, and serious home players seeking reliable, tournament-ready performance.",
   },
   {
     title: "Rackets & Balls",
     image: racketsBallsImg,
     description:
-      "Wide range of rackets and balls designed for beginners to advanced players, ensuring control, durability, and consistency.",
+      "Our table tennis racquet customization service is designed to deliver optimal control, comfort, and performance for players at every level. From beginners to competitive athletes, we offer expert guidance on blade and rubber selection, professional pasting using ITTF-approved glue, and precise rubber cutting for a clean, balanced finish. We also supply high-quality training and match balls that ensure consistent bounce and durability. Ideal for academies, institutions, clubs, and players seeking reliable, match-ready equipment.",
   },
   {
     title: "Table Tennis Flooring",
     image: ttFlooringImg,
     description:
-      "High-quality anti-slip flooring systems that enhance footwork, reduce injury risk, and support intensive training.",
+      "Our table tennis flooring is designed to support high-intensity movement, providing excellent stability, safety, and playing comfort. Built to withstand heavy foot traffic and repeated impact, it offers advanced shock absorption to help reduce injury risk. Featuring anti-skid performance, abrasion resistance, sound insulation, and easy maintenance, our flooring ensures consistent play in demanding environments. The Flex 4500 Table Tennis Flooring is ideal for academies, clubs, and professional training facilities.",
   },
   {
     title: "Robot Training Machines",
     image: ttRobotsImg,
     description:
-      "Advanced robot trainers with programmable drills to improve reaction time, spin control, and match readiness.",
+      "Our table tennis robots are designed to enhance training efficiency, consistency, and skill development for players of all levels. From beginners to competitive athletes, we offer advanced models including the S27 TT Robot, 989G TT Robot, 989D TT Robot, and B3 TT Robot. Ideal for academies, clubs, and serious home players, these robots provide precise ball placement, adjustable spin, and speed control to simulate real-match conditions and accelerate improvement.",
   },
   {
     title: "TT Training Systems",
     image: ttTrainingSystemImg,
     description:
-      "Structured training aids and multi-ball systems designed for systematic skill development.",
+      "Our Interactive Table Tennis Training Systems are designed to enhance precision, reaction time, and footwork through advanced, AI-powered technology. The FastPong grid of 8 illuminated squares provides instant visual feedback on the table surface, helping players improve accuracy and decision-making. With motion sensors, audio feedback, and app-based tracking, the system monitors progress, creates personalized training routines, and offers real-time performance insights.",
   },
   {
     title: "TT Accessories",
     image: ttAccessoriesImg,
     description:
-      "Essential accessories including nets, barriers, scoreboards, bat covers, and maintenance tools.",
+      "Our table tennis nets, posts, and accessories provide everything needed for professional and recreational play. We offer high-quality options including Snap-On TT Nets and Posts, Expert TT Nets and Posts, Expert Cotton Nets, Metal Nets, Referee Chairs, Umpire Tables, Towel Stands, Ball Trolleys, Table Covers, Pyramid Surrounds, Scoreboards, Racket Cases, Ball Pickers, Web X Clues, Shoes, Bags, and Socks. Designed for durability, convenience, and tournament-ready performance.",
   },
   {
     title: "Basketball Equipment",
     image: basketballImg,
     description:
-      "Indoor and outdoor basketballs, training equipment, and court essentials for schools and academies.",
+      "Our basketball equipment range is designed for training, recreation, and competitive play. We offer portable height-adjustable basketball poles, portable poles, fixed heavy-duty poles, and height-adjustable systems, along with high-quality basketballs for indoor and outdoor use. Ideal for schools, academies, clubs, and home courts, our equipment delivers durability, stability, and reliable performance.",
   },
   {
-    title: "Basketball Backboards",
+    title: "Basketball Backboards and Accessories",
     image: basketballBoardImg,
     description:
-      "Durable backboards, rings, and mounting systems for recreational and professional courts.",
+      "Our basketball backboards and accessories are built for dependable indoor and outdoor play. The range includes transparent, wall-mounted, height-adjustable, and weatherproof backboards, along with heavy-duty galvanized basketball rings featuring multiple spring options and nets. Practical additions such as ball cages and ball trolleys make this setup ideal for schools, academies, clubs, and professional courts.",
   },
   {
     title: "Badminton Equipment",
     image: badmintonImg,
     description:
-      "Badminton rackets, shuttlecocks, and court equipment suitable for training and competition.",
+      "Our badminton equipment range supports training, recreation, and competitive play. We offer portable poles, portable pole-and-net sets with carry bags, nylon and cotton nets, along with quality rackets and shuttlecocks. Complemented by durable badminton flooring, this range is ideal for schools, academies, clubs, and indoor sports facilities seeking reliable, complete badminton setups.",
   },
   {
     title: "Poles & Nets",
     image: polesNetsImg,
     description:
-      "Multi-sport poles and net systems compatible with badminton, volleyball, and pickleball courts.",
+      "Our poles and nets range supports multiple sports and flexible court setups. We offer portable and fixed lawn tennis poles, along with volleyball poles and nets designed for stability and long-lasting performance. Ideal for schools, academies, clubs, and recreational facilities, these systems provide reliable installation for both training and competitive play.",
   },
   {
     title: "Goal Posts",
     image: goalPostsImg,
     description:
-      "Strong and weather-resistant goal posts suitable for schools and training grounds.",
+      "Our goal posts and nets are designed for training and competitive play across multiple sports. The range includes portable and fixed football goal posts, handball goal posts, and durable nylon and hexagonal nets built for long-lasting performance. Ideal for schools, academies, clubs, and sports grounds, these systems offer strength, stability, and reliable playability.",
   },
   {
     title: "Pickleball Equipment",
     image: pickleballImg,
     description:
-      "Pickleball paddles, nets, and accessories for recreational and competitive use.",
+      "Our pickleball equipment range is designed for both recreational and competitive play. We offer club net sets, global net sets, and portable backyard net sets, along with premium Carbon X and Blade X pickleball paddles. Complete with indoor and outdoor pickleball balls, this range is ideal for clubs, schools, academies, and home players seeking reliable, match-ready pickleball setups.",
   },
   {
     title: "Gymnastics Equipment",
     image: gymnasticsImg,
     description:
-      "Gymnastics apparatus supporting flexibility, balance, and core strength training.",
+      "Our gymnastics equipment range is designed to support safe training and competitive performance at all levels. It includes vaulting tables and horses, elite competition apparatus such as parallel bars with fiberglass rails, balancing beams, horizontal and asymmetric bars, and Roman rings. Complemented by trampolines, springboards, and vaulting boxes, this range is ideal for schools, academies, and professional gymnastics training facilities.",
   },
   {
     title: "Kids Gym Equipment",
     image: kidsGymImg,
     description:
-      "Safe and engaging gym equipment designed for early physical development and coordination.",
+      "Our kids gym equipment is designed for safe, fun, and engaging physical development. It includes crash landing mats, colorful gymnastic benches, cantilever and swing bars, trapezoid sets, multi blocks, incline mats, foam steps, donuts, fun cubes, and multi-colour mats, along with swing bar mats. Ideal for schools, activity zones, and early learning centers, it promotes balance, coordination, strength, and confidence in children.",
   },
   {
     title: "Mats",
     image: matsImg,
     description:
-      "Shock-absorbing mats suitable for gymnastics, martial arts, yoga, and general training.",
+      "Our sports mats are designed for safety, durability, and performance across multiple sports. The range includes pole vault and high jump landing mats, judo mats with covers, wrestling mats with covers, kabaddi mats, kho-kho mats, dribble mats, and multipurpose mats. Ideal for schools, academies, and training centers, these mats provide protection, comfort, and reliable performance for athletes of all levels.",
   },
   {
-    title: "Training Equipment",
+    title: "Training & Athletic Equipment",
     image: trainingEquipImg,
     description:
-      "Strength, agility, and conditioning tools including cones, ladders, and resistance equipment.",
+      "Our training and athletic equipment is designed for performance, durability, and safety. The range includes folding hurdles, high jump stands, relay batons, starting blocks, javelins, shot puts, rubber discuses, line marking machines, ladders, cones, hoops, and markers. Ideal for schools, academies, and training facilities, these tools support speed, agility, coordination, and overall athletic development.",
   },
   {
     title: "Pool Table",
     image: poolTableImg,
     description:
-      "Professional pool tables and accessories for recreation centers and clubs.",
+      "Our pool tables combine style, versatility, and professional playability. We offer premium models including the Pool Table Model X (with cues, balls, and triangle included), the Series 1 multi-purpose table (TT table, dining table, and pool table in one), and the Pool Table Flex. Designed for clubs, recreation centers, and serious home players, these tables deliver consistent play, durability, and a sleek, multi-functional setup for both practice and leisure.",
   },
   {
-    title: "Football Equipment",
+    title: "Foosball",
     image: footballImg,
     description:
-      "Football training and match equipment including balls, markers, and goal accessories.",
+      "Our foosball tables are designed for fun, durability, and professional-level play in both indoor and outdoor settings. Featuring stainless steel rods, stable frames, and high-quality playing surfaces, they ensure smooth gameplay and long-lasting performance. Suitable for schools, clubs, recreation centers, and home use, our foosball tables combine robust construction, precise control, and competitive design, making them ideal for casual play, training, or tournaments.",
   },
   {
     title: "Fun Boards",
     image: funBoardsImg,
     description:
-      "Interactive balance and coordination boards designed for fun fitness training.",
+      "Our Fun Boards are designed to make learning and play more engaging for all age groups. Compact and easy to use, they include 2-in-1 Ludo & Chess Boards and 2-in-1 Ludo & Ladder Boards, offering multiple games in a single setup. Ideal for schools, activity zones, recreation areas, and homes, these boards encourage fun, strategy, and social interaction in a simple, space-saving format.",
   },
   {
     title: "String Hockey",
     image: stringHockeyImg,
     description:
-      "Compact and engaging hockey systems ideal for indoor recreational play.",
+      "Our String Hockey sets are designed for fun on the go, combining portability, quality, and stylish design. Available in String Hockey and Wooden String Hockey variants, they are easy to set up and perfect for quick recreational play. Ideal for homes, schools, and activity zones, these games encourage coordination, friendly competition, and engaging indoor entertainment.",
   },
   {
-    title: "Mini 4-in-1 TT Table",
+    title: "Super Mini Tables",
     image: miniTTImg,
     description:
-      "Multi-game table combining table tennis and other recreational games for versatile use.",
+      "Our Super Mini Tables are designed to bring safe, engaging play to kids of all ages. Compact, portable, and easy to set up, they are perfect for fun on the go while prioritizing security and child safety. Our range includes the Super Mini 3-in-1 Table (table tennis, chess, and ludo), Super Mini Fun TT Table, and Super Mini Bubbles TT Table etc. Ideal for homes, schools, activity zones, and play areas, these tables encourage active play, coordination, and enjoyment.",
   },
   {
     title: "Yoga Mats",
     image: yogaMatsImg,
     description:
-      "Comfortable and durable yoga mats suitable for training, stretching, and recovery.",
+      "Our yoga mats combine comfort, durability, and stability for effective practice at all levels. We offer Mantra Plain Mats and Mantra Asana Mats, designed for stretching, meditation, and yoga training. Ideal for homes, studios, schools, and fitness centers, these mats provide non-slip surfaces and long-lasting quality for a safe and focused practice.",
   },
-  {
-    title: "Carrom Boards",
-    image: carromImg,
-    description:
-      "High-quality carrom boards designed for smooth play and long-lasting performance.",
-  },
+ 
 ];
 
 
@@ -262,6 +251,8 @@ export default function SportsEquipment() {
   const navigate = useNavigate();
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const sliderSectionRef = useRef(null);
+
 
   const settings = {
     dots: false,
@@ -271,6 +262,7 @@ export default function SportsEquipment() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4500,
+    pauseOnHover: true,
     
     beforeChange: (_, next) => setActiveIndex(next),
     prevArrow: <CustomArrow direction="prev" />,
@@ -327,18 +319,26 @@ export default function SportsEquipment() {
   competition, and durability, supporting players at every stage of development —
   from foundational training tools to advanced performance equipment. For detailed
   specifications and customized solutions, our team can share a complete sports
-  equipment brochure upon request.
+  equipment brochure upon request. Explore our equipments..
 </p>
 
       </div>
 
       {/* Equipment Icon Buttons */}
-      <div className="flex flex-wrap justify-center gap-4 my-16 px-4">
+      <div className="flex flex-wrap justify-center gap-4 mb-16 mt-4 md:mt-12 px-4">
         {equipmentCategories.map((item, index) => (
           <button
             key={item.name}
-            onClick={() => sliderRef.current.slickGoTo(index)}
-            className={`flex items-center gap-3 px-6 py-3 rounded-full border transition-all ${
+            onClick={() => {
+              // Scroll to the slider smoothly
+              const navbarHeight = 85; // adjust if your navbar height is different
+    const sliderTop = sliderSectionRef.current.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: sliderTop - navbarHeight,
+      behavior: "smooth",
+    });
+              sliderRef.current.slickGoTo(index)}}
+            className={`flex items-center gap-2 md:gap-3 px-4 py-1 md:px-6 md:py-3 rounded-full border transition-all ${
               activeIndex === index
                 ? "bg-blue-900 text-white border-blue-900 shadow-lg"
                 : "border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
@@ -352,14 +352,14 @@ export default function SportsEquipment() {
       </div>
 
      {/* Slider */}
-<div className="w-full mb-24 overflow-hidden ">
+<div ref={sliderSectionRef} className="w-full mb-24 overflow-hidden ">
   <Slider ref={sliderRef} {...settings}>
     {equipmentSlides.map((slide, index) => (
       <div key={index} className="px-4 md:px-0">
-        <div className="bg-white rounded-2xl  overflow-hidden flex flex-col md:flex-row h-[660px] md:h-[530px]  mx-auto  max-w-7xl border border-blue-900">
+        <div className="bg-white rounded-2xl  overflow-hidden flex flex-col md:flex-row h-[670px] md:h-[530px]  mx-auto  max-w-7xl border border-blue-900">
           
           {/* Image */}
-          <div className="w-full md:w-2.5/4 h-86 sm:h-1/2 md:h-auto">
+          <div className="w-full md:w-2.4/4 h-86 md:h-auto">
             <img
               src={slide.image}
               alt={slide.title}
@@ -368,7 +368,7 @@ export default function SportsEquipment() {
           </div>
 
           {/* Content */}
-          <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
+          <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-10 flex flex-col justify-start md:mt-2">
             <h3
               className="text-2xl sm:text-3xl font-bold text-blue-900 uppercase mb-3 md:mb-4"
               style={{ fontFamily: "Oswald, sans-serif" }}

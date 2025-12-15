@@ -202,9 +202,12 @@ export default function Locations() {
       {selectedLocation && (
         <div ref={mapRef} className="w-full py-20  mb-1">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>
-              Find Us on Map
-            </h2>
+            <h2
+                    className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-blue-900 uppercase tracking-wide"
+                    style={{ fontFamily: 'Oswald, sans-serif' }}
+                  >
+                  Find Us On Maps
+                  </h2>
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <div className="cursor-pointer" onClick={() => openInGoogleMaps(selectedLocation)}>
                 <img

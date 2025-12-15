@@ -32,6 +32,7 @@ const sliderSettings2 = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3000,
+  pauseOnHover: true,
   centerMode: true,
   beforeChange: () => {
     // Pause all videos when sliding

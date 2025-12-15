@@ -1,51 +1,149 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
-
-import event1 from "../assets/event1.jpeg";
+import event1 from "../assets/event1.jpeg"
 import event2 from "../assets/event2.jpeg";
 import event3 from "../assets/event3.png";
-import event4 from "../assets/event4.png";
+import event4 from "../assets/event4.jpeg";
 import event5 from "../assets/event5.jpeg";
-import event6 from "../assets/event6.jpeg";
 import event7 from "../assets/event7.jpeg";
 import event8 from "../assets/event8.jpeg";
+import event9 from "../assets/event9.jpeg";
+import event10 from "../assets/event10.jpeg";
+import event11 from "../assets/event11.jpeg";
+import event12 from "../assets/event12.jpeg";
+import event13 from "../assets/event13.jpeg";
+import event14 from "../assets/event14.jpeg";
+import event15 from "../assets/event15.jpeg";
+import event16 from "../assets/event16.jpeg";
+import event17 from "../assets/event17.jpeg";
+const eventRows = [
+  {
+    item1: {
+      src: event2,
+      title: "District Level TT Tournament at Ajjarkad Indoor Stadium, Udupi",
+    },
+    item2: {
+      src: event7,
+      title: "Yoga Day event hosted at our Surathkal Center",
+    },
+  },
+  {
+    item1: {
+      src: event3,
+      title: "Sports Day at Canara Nandagokul Preschool, Mangaluru",
+    },
+    item2: {
+      src: event5,
+      title: "Intercollege TT tournament at Mangalore University",
+    },
+  },
+  {
+    item1: {
+      src: event1,
+      title: "Aics interschool TT tournament organised at St Theresa School",
+    },
+    item2: {
+      src: event4,
+      title: "Inter Mahe TT Tournament organised by PTTCE",
+    },
+  },
+  {
+    item1: {
+      src: event8,
+      title: "Summer Camp organised at Little Rock Indian School",
+    },
+    item2: {
+      src: event9,
+      title: "RGUHS Zonal winners Father Muller Medical College",
+    },
+  },
+  {
+    item1: {
+      src: event10,
+      title: "Karnataka State Ranking TT Tournament 2024 under the aegis of KTTA.",
+    },
+    item2: {
+      src: event11,
+      title: "Zonal level ICSE schools TT tournament",
+    },
+  },
+  {
+    item1: {
+      src: event12,
+      title: "Inter district tournament at milagres kallianpur. 3rd edition",
+    },
+    item2: {
+      src: event13,
+      title: "Karnataka state games 2025 held at Manipal",
+    },
+  },
+  {
+    item1: {
+      src: event14,
+      title: "Yoga Day Event at Father Muller Indoor Stadium, Mangaluru",
+    },
+    item2: {
+      src: event15,
+      title: "TT training camp held at UVA Meridian, Koteshwara",
+    },
+  },
+  {
+    item1: {
+      src: event16,
+      title: "Training Camp at Mangaluru University",
+    },
+    item2: {
+      src: event17,
+      title: "World TT Day Event at Father Muller Indoor Stadium, Mangaluru",
+    },
+  },
+  
+  
+];
+const MediaRow = ({ item1, item2 }) => {
+  if (!item1 || !item2) return null;
+
+  return (
+    <div className="w-full px-4 md:px-8 mb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      {[item1, item2].map((item, idx) => (
+        <div
+          key={idx}
+          className="relative w-full h-[380px] md:h-[450px] rounded-xl overflow-hidden shadow-lg"
+        >
+          <img
+            src={item.src}
+            alt={item.title}
+            className="w-full h-full object-cover"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+          <div className="absolute bottom-6 left-6 text-white">
+            <h3
+              className="text-xl md:text-2xl"
+              style={{ fontFamily: "Oswald, sans-serif" }}
+            >
+              {item.title}
+            </h3>
+          </div>
+        </div>
+      ))}
+
+    </div>
+  );
+};
+
+
+
 
 export default function EventManagement() {
   const navigate = useNavigate();
 
-  // Reusable Section Component (2 images per row)
-  const ImageRow = ({ title, img1, img2 }) => (
-    <div className="max-w-7xl mx-auto px-4 mb-20">
-      {title && (
-        <h2
-          className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center"
-          style={{ fontFamily: "Oswald, sans-serif" }}
-        >
-          {title}
-        </h2>
-      )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="aspect-[4/3] w-full rounded-xl overflow-hidden shadow-lg">
-          <img
-            src={img1}
-            alt={title || "Event Image 1"}
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        <div className="aspect-[4/3] w-full rounded-xl overflow-hidden shadow-lg">
-          <img
-            src={img2}
-            alt={title || "Event Image 2"}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    </div>
-  );
-
+  
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-100 via-white to-blue-200 flex flex-col">
 
@@ -116,7 +214,7 @@ export default function EventManagement() {
         >
           With experience organizing events in top stadiums and school campuses across the region, we make
           sports events stress-free for institutions and exciting for children. Our goal is simple — to create
-          unforgettable sporting experiences that inspire participation, competition, and joy.
+          unforgettable sporting experiences that inspire participation, competition, and joy. Explore events we organized..
         </p>
       </div>
 
@@ -138,28 +236,16 @@ export default function EventManagement() {
           />
         </div>
       </div>
+      
 
-      {/* IMAGE ROWS WITH TITLES */}
-      <ImageRow
-        title="Yoga Day event hosted at our Surathkal Center"
-        img1={event7}
-        img2={event8}
-      />
-      <ImageRow
-        title="District level table tennis tournament held at Ajjarkad Indoor Stadium, Udupi"
-        img1={event1}
-        img2={event2}
-      />
-      <ImageRow
-        title="SportsDay at Canara Nandagokul Preschool, Mangaluru"
-        img1={event3}
-        img2={event4}
-      />
-      <ImageRow
-        title="Intercollege TT tournament at Mangalore University"
-        img1={event5}
-        img2={event6}
-      />
+      {eventRows.map((row, index) => (
+  <MediaRow
+    key={index}
+    item1={row.item1}
+    item2={row.item2}
+  />
+))}
+
 
       {/* CTA SECTION */}
       <div className="text-center px-4 md:px-16 py-16 max-w-6xl mx-auto">
