@@ -300,7 +300,7 @@ export default function SportsEquipment() {
       </div>
 
       {/* Heading + Intro */}
-      <div className="text-center px-4 md:px-16 py-12 md:py-8 max-w-6xl mx-auto mt-9 md:mt-0">
+      <div className="text-center px-4 md:px-16 py-12 md:py-8 max-w-7xl mx-auto mt-9 md:mt-0">
         <h1
           className="text-5xl md:text-6xl font-bold text-blue-900 uppercase tracking-wide mb-6"
           style={{ fontFamily: "Oswald, sans-serif" }}
@@ -377,7 +377,7 @@ export default function SportsEquipment() {
             </h3>
 
             <p
-              className="text-base sm:text-lg text-gray-700 leading-relaxed"
+              className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify"
               style={{ fontFamily: "Lora, serif" }}
             >
               {slide.description}
@@ -393,7 +393,7 @@ export default function SportsEquipment() {
 
 
       {/* CTA */}
-      <div className="px-4 md:px-16 pb-12 pt-0 md:pt-4 mb-6  max-w-6xl mx-auto text-center">
+      <div className="px-4 md:px-16 pb-12 pt-0 md:pt-4 mb-6  max-w-7xl mx-auto text-center">
         <h2
           className="text-4xl md:text-5xl font-bold text-blue-900 mb-6 uppercase tracking-wide"
           style={{ fontFamily: "Oswald, sans-serif" }}

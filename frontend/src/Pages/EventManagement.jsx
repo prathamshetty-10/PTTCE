@@ -172,7 +172,7 @@ export default function EventManagement() {
       </div>
 
       {/* Heading + Description */}
-      <div className="text-center px-4 md:px-16 py-16 max-w-6xl mx-auto mt-9 md:mt-0">
+      <div className="text-center px-4 md:px-16 pt-12 pb-4 md:pt-8 md:pb-2 max-w-7xl mx-auto mt-9 md:mt-0">
         <h1
           className="text-5xl md:text-6xl font-bold text-blue-900 uppercase tracking-wide mb-6"
           style={{ fontFamily: "Oswald, sans-serif" }}
@@ -219,7 +219,7 @@ export default function EventManagement() {
       </div>
 
       {/* YOUTUBE VIDEO SECTION */}
-      <div className="md:w-[60vw] w-full mx-auto px-4 mb-20">
+      <div className="md:w-[60vw] w-full mx-auto px-4 mb-20 mt-12">
         <h2
           className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center"
           style={{ fontFamily: "Oswald, sans-serif" }}
@@ -248,7 +248,7 @@ export default function EventManagement() {
 
 
       {/* CTA SECTION */}
-      <div className="text-center px-4 md:px-16 py-16 max-w-6xl mx-auto">
+      <div className="text-center px-4 md:px-16 py-16 max-w-7xl mx-auto">
         <h2
           className="text-4xl md:text-5xl font-bold text-blue-900 mb-6 uppercase tracking-wide"
           style={{ fontFamily: "Oswald, sans-serif" }}

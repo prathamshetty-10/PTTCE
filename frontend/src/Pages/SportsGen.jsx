@@ -5,7 +5,7 @@ import Navbar from "../Components/Navbar.jsx";
 // IMPORT ALL IMAGES
 import sportsgenCanara1 from "../assets/sportsgen.jpg";
 import sportsgenCanara2 from "../assets/sportsgen2.jpg";
-
+import logo from "../assets/logo4.png"
 import sportsgenSiddhivinayaka1 from "../assets/sportsgen3.jpg";
 import sportsgenSiddhivinayaka2 from "../assets/sportsgen4.jpg";
 
@@ -140,13 +140,21 @@ export default function SportsGen() {
       </div>
 
       {/* Heading + Description */}
-      <div className="text-center px-4 md:px-16 py-16 max-w-6xl mx-auto mt-9 md:mt-0">
+      <div className="text-center px-4 md:px-16 pt-12 pb-4 md:pt-8 md:pb-2 max-w-7xl mx-auto mt-9 md:mt-0">
         <h1
           className="text-5xl md:text-6xl font-bold text-blue-900 uppercase tracking-wide mb-6"
           style={{ fontFamily: "Oswald, sans-serif" }}
         >
           SportsGen
         </h1>
+        {/* Logo under heading */}
+                <div className="flex justify-center my-8">
+                  <img
+                    src={logo}
+                    alt="PTTCE Logo"
+                    className="w-full max-w-5xl md:max-w-xl h-auto md:max-h-56 object-contain "
+                  />
+                </div>
 
        <p
   className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 text-justify"
@@ -170,7 +178,7 @@ export default function SportsGen() {
 </p>
 
 <p
-  className="text-lg md:text-xl text-gray-700 leading-relaxed text-justify"
+  className="text-lg md:text-xl text-gray-700 leading-relaxed text-justify mb-12"
   style={{ fontFamily: "Lora, serif" }}
 >
   Through SportsGen, we send a trained coaching team directly to schools, making sports education
@@ -248,7 +256,7 @@ export default function SportsGen() {
 
 
       {/* Partner With Us - CTA Section */}
-<div className="text-center px-4 md:px-16 py-16 max-w-6xl mx-auto">
+<div className="text-center px-4 md:px-16 py-16 max-w-7xl mx-auto">
   <h2
     className="text-4xl md:text-5xl font-bold text-blue-900 mb-6 uppercase tracking-wide"
     style={{ fontFamily: "Oswald, sans-serif" }}

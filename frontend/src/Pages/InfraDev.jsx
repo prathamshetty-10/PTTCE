@@ -33,7 +33,7 @@ export default function InfrastructureDevelopment() {
       </div>
 
       {/* Heading */}
-      <div className="text-center px-4 md:px-16 pt-12 pb-4 md:pt-8 md:pb-2 max-w-6xl mx-auto mt-9 md:mt-0">
+      <div className="text-center px-4 md:px-16 pt-12 pb-4 md:pt-8 md:pb-2 max-w-7xl mx-auto mt-9 md:mt-0">
         <h1
           className="text-5xl md:text-6xl font-bold text-blue-900 uppercase tracking-wide mb-10"
           style={{ fontFamily: "Oswald, sans-serif" }}
@@ -77,7 +77,7 @@ export default function InfrastructureDevelopment() {
           
         
         {/* CTA Section */}
-<div className="max-w-6xl mx-auto mt-16 text-center">
+<div className="max-w-7xl mx-auto mt-16 text-center">
   <h2
     className="text-4xl md:text-5xl font-bold text-blue-900 mb-6 uppercase tracking-wide"
     style={{ fontFamily: "Oswald, sans-serif" }}
@@ -86,7 +86,7 @@ export default function InfrastructureDevelopment() {
   </h2>
 
   <p
-    className="text-lg md:text-xl text-gray-700 leading-relaxed text-justify md:text-center"
+    className="text-lg md:text-xl text-gray-700 leading-relaxed text-justify"
     style={{ fontFamily: "Lora, serif" }}
   >
     From building dedicated Table Tennis halls to designing multi-sport facilities, our approach

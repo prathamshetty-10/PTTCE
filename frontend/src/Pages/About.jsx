@@ -30,6 +30,8 @@ import face20 from "../assets/face20.jpeg"
 import face21 from "../assets/face21.jpeg"
 import face22 from "../assets/face22.jpeg"
 import face23 from "../assets/face23.jpeg"
+import face24 from "../assets/face24.jpeg"
+import face25 from "../assets/face25.jpeg"
 
 
 const CustomArrow = ({ direction, onClick }) => (
@@ -152,6 +154,16 @@ name: "Riona Mendonca",
 title: "World Rank #4, Women’s Doubles 2022",
 image: face23,
 },
+{
+name: "Velonia Mascarenhas",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face24,
+},
+{
+name: "Harsha Varthaan ",
+title: "World Rank #4, Women’s Doubles 2022",
+image: face25,
+},
 ];
 
 
@@ -219,7 +231,7 @@ export default function AboutPCS() {
       {/* Full-width Intro Paragraphs */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 pb-8">
         <p
-          className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6"
+          className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 text-justify"
           style={{ fontFamily: "Lora, serif" }}
         >
           Padukone Centre for Sports (PCS) is a passionate sports development organization dedicated to transforming the
@@ -228,7 +240,7 @@ export default function AboutPCS() {
         </p>
 
         <p
-          className="text-lg md:text-xl text-gray-700 leading-relaxed"
+          className="text-lg md:text-xl text-gray-700 leading-relaxed text-justify"
           style={{ fontFamily: "Lora, serif" }}
         >
           The journey started long before the company was formally established. Coach Ashwin spent years coaching
@@ -244,10 +256,10 @@ export default function AboutPCS() {
           {/* Text */}
           <div className="w-full md:w-1/2 px-6 md:px-12">
             <p
-              className="text-lg md:text-xl text-gray-700 leading-relaxed"
+              className="text-lg md:text-xl text-gray-700 leading-relaxed text-justify"
               style={{ fontFamily: "Lora, serif" }}
             >
-              In 2023, PCS took shape professionally with the launch of the first Padukone Table Tennis Centre for
+              In 2022, PCS took shape professionally with the launch of the first Padukone Table Tennis Centre for
               Excellence at Father Muller Indoor Stadium. With international-standard lighting, and
               premium Stag Black America tables, the centre set a new benchmark for table tennis infrastructure in the
               region. What began as a single academy soon expanded into Suratkal and then into leading schools across
@@ -272,7 +284,7 @@ export default function AboutPCS() {
           {/* Text */}
           <div className="w-full md:w-1/2 px-6 md:px-12">
             <p
-              className="text-lg md:text-xl text-gray-700 leading-relaxed"
+              className="text-lg md:text-xl text-gray-700 leading-relaxed text-justify"
               style={{ fontFamily: "Lora, serif" }}
             >
               As PCS grew, it introduced SportsGen — an early physical development program for children aged 4 to 8.
@@ -296,7 +308,7 @@ export default function AboutPCS() {
       {/* Remaining text block */}
 <div className="max-w-7xl mx-auto px-6 md:px-16 py-12">
   <p
-    className="text-lg md:text-xl text-gray-700 leading-relaxed"
+    className="text-lg md:text-xl text-gray-700 leading-relaxed text-justify"
     style={{ fontFamily: "Lora, serif" }}
   >
     PCS remains committed to giving every child the chance to play, grow, and dream big. From humble beginnings in
@@ -330,7 +342,7 @@ export default function AboutPCS() {
 
       {/* Text */}
       <div className="md:w-1/2">
-        <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+        <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-justify">
           Ashwin Kumar Padukone is an ITTF Level 3 Certified Coach with over 15 years of professional playing 
           and coaching experience. He is one of only four ITTF Level 1 Course Conductors and Coach Trainers 
           in India, bringing world-class expertise to the Padukone Table Tennis Centre for Excellence (PTTCE). 
@@ -357,7 +369,7 @@ export default function AboutPCS() {
 
       {/* Text */}
       <div className="md:w-1/2">
-        <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+        <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-justify">
           Ashwin has coached numerous State and National level players, conducted high-performance camps in 
           cities like Indore and Noida, and contributed extensively to grassroots development of table tennis 
           in India. Currently, he serves as a nominated member of the Development and Education Committee of the 
@@ -396,7 +408,7 @@ export default function AboutPCS() {
 
       {/* Text */}
       <div className="md:w-1/2">
-        <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+        <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-justify">
           Swaroop G is an internationally certified table tennis coach at the Padukone Table Tennis Centre 
           for Excellence, training state, national, and para-athlete players. A distinguished player himself, 
           he began his journey in Class 6, won multiple state and university gold medals, and represented 
@@ -461,7 +473,7 @@ className="absolute inset-0 w-full h-full object-cover"
     </h2>
 
     {/* Description */}
-    <p className="text-lg md:text-xl text-gray-700 mb-10">
+    <p className="text-lg md:text-xl text-gray-700 mb-10 text-justify">
       Discover a range of programs tailored for every age and skill level — from early development for young children 
       to competitive coaching for state, national, and para-athletes. Build skills, confidence, and a lifelong love for sport!
     </p>

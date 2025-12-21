@@ -183,7 +183,7 @@ export default function Home() {
    
     { img: gal6, desc:"PTTCE: Mount Carmel Central School, Mangaluru, Karnataka"},
     
-    { img: gal12, desc:"Head Coach Ashwin Kumar Padukone with assistant coaches Shashank Bhat, Abijith Pai, Elson, Aarna, Vinay, Vian, Aditya, and Nithish."},
+    { img: gal12, desc:"Head Coach Ashwin Kumar Padukone with assistant coaches Shashank Bhat, Abhijith Pai, Elson, Aarna, Vinay, Vian, Aditya, and Nithish."},
     { img: gal7, desc:"PTTCE: Saint Teresa School, Mangaluru, Karnataka"},
     { img: gal15, desc:"SportsGen at Sri Siddhivinayaka Residential School, Kundapura, Udupi"},
     { img: gal11, desc:""},
@@ -208,7 +208,7 @@ export default function Home() {
     {
       name: "Varun Prabhu",
       rating: 5,
-      review: "A very Good Academy For Aspiring Table tennis players starting from professional level to beginner level. Ashwin Sir Is Just Excellent and his way of teaching kids and Adults Is Beyond Imagination."
+      review: "A very Good Academy For Aspiring Table tennis players starting from professional level to beginner level. Ashwin Sir Is Just Excellent and his way of teaching kids and Adults Is just amazing."
     },
     {
       name: "Ansh Sureshan",
@@ -239,10 +239,17 @@ export default function Home() {
 
   return (
     <div className="min-h-screen w-full flex flex-col relative bg-gradient-to-r from-blue-100 via-white to-blue-200">
-      {/* Navbar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-blue-900">
-        <Navbar />
-      </div>
+    {/* Google Fonts */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet"
+      />
+      {/* Fixed Navbar */}
+            <div className="fixed top-0 left-0 right-0 z-50">
+              <Navbar />
+            </div>
 
       <div className="w-full mt-16">
         {/* Hero Section */}
@@ -272,34 +279,57 @@ export default function Home() {
 
        
 
-        {/* About Section */}
-        <div className="w-full flex items-center mt-[15px] md:mt-[40px] pb-10 pt-10">
-          <div className="w-full max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-[55%]">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-blue-900 text-center" style={{ fontFamily: 'Oswald, sans-serif' }}>
-                Padukone Centre of Sports
-              </h2>
-              <p className="text-lg text-gray-700 mb-4" style={{ fontFamily: 'Lora, serif' }}>
-  Padukone Centre for Sports (PCS) is a sports development organization transforming the grassroots sports ecosystem in Karnataka. Founded by Coach Ashwin Kumar Padukone, PCS works to make high-quality training accessible to every child. Since launching its first Table Tennis Academy in 2022 at Father Muller Indoor Stadium, PCS has expanded to Mangalore, Manipal, and Suratkal, empowering young athletes through structured coaching, modern infrastructure, and strong school partnerships.
-</p>
+       {/* About Section */}
+<div className="w-full mt-[15px] md:mt-[40px] pb-12 pt-10">
+  <div className="max-w-7xl mx-auto px-4">
 
-<p className="text-lg text-gray-700" style={{ fontFamily: 'Lora, serif' }}>
-  At PCS, we nurture young talent by building passion, discipline, and teamwork while helping students grow physically, mentally, and emotionally. Our inclusive environment and expert guidance encourage children to explore their potential, enjoy healthy competition, and develop confidence. Along with skill development, we focus on character, resilience, and community—celebrating every achievement and fostering a lifelong love for sport.
-</p>
+    {/* Centered Heading */}
+    <h2
+      className="text-4xl md:text-5xl font-bold mb-12 text-blue-900 text-center"
+      style={{ fontFamily: "Oswald, sans-serif" }}
+    >
+      Padukone Centre for Sports
+    </h2>
+
+    {/* Content Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      {/* Left: Text */}
+      <div>
+        <p
+          className="text-lg md:text-xl text-gray-700 text-justify"
+          style={{ fontFamily: "Lora, serif" }}
+        >
+          Padukone Centre for Sports (PCS) is a sports development organization dedicated to strengthening grassroots sports in Karnataka through a professional and athlete-centric approach. Founded by Coach Ashwin Kumar Padukone, PCS is committed to delivering high-quality training that blends structured coaching methodologies, experienced mentorship, and modern, well-equipped facilities. Since establishing its first Table Tennis Academy in 2022 at Father Muller Indoor Stadium, PCS has steadily expanded its presence to Mangalore, Manipal, and Suratkal. Across all centres, the focus remains on building strong fundamentals, discipline, confidence, and consistency, while nurturing a deep appreciation for sport in an environment that values growth, effort, and long-term athlete development.
+        </p>
+      </div>
+
+      {/* Right: Image */}
+      <div>
+        <img
+          src={about}
+          alt="About Us"
+          className="w-full h-[360px] object-cover rounded-lg shadow-lg"
+        />
+      </div>
+
+    </div>
+
+    {/* Button Below Grid */}
+    <div className="mt-12 flex justify-center">
+      <button
+        onClick={() => navigate("/about")}
+        className="bg-blue-900 text-white px-14 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
+        style={{ fontFamily: "Oswald, sans-serif" }}
+      >
+        Know More
+      </button>
+    </div>
+
+  </div>
+</div>
 
 
-
-              <div className="mt-8">
-                <button onClick={() => navigate("/about")} className="bg-blue-900 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors" style={{ fontFamily: 'Oswald, sans-serif' }}>
-                  Know More
-                </button>
-              </div>
-            </div>
-            <div className="md:w-1/2">
-              <img src={about} alt="About Us Image" className="w-full h-[400px] object-cover rounded-lg shadow-lg"/>
-            </div>
-          </div>
-        </div>
         {/* Achievements Slider */}
 <div className="w-full py-16 mt-[10px]">
   <div className="max-w-[85vw] mx-auto px-2">
@@ -381,7 +411,7 @@ export default function Home() {
                   <div className="flex items-center text-yellow-500 text-lg font-medium mb-4">
                     {[...Array(review.rating)].map((_, i) => <AiFillStar key={i} />)}
                   </div>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: 'Lora, serif' }}>{review.review}</p>
+                  <p className="text-gray-600 leading-relaxed text-lg md:text-xl" style={{ fontFamily: 'Lora, serif' }}>{review.review}</p>
                 </div>
               ))}
             </div>
@@ -437,7 +467,7 @@ export default function Home() {
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-white shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow duration-300 border border-blue-900">
                   <h3 className="text-2xl font-semibold mb-2 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>{faq.question}</h3>
-                  <p className="text-gray-600" style={{ fontFamily: 'Lora, serif' }}>{faq.answer}</p>
+                  <p className="text-gray-600 text-lg md:text-xl" style={{ fontFamily: 'Lora, serif' }}>{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -452,7 +482,7 @@ export default function Home() {
     </h2>
 
     {/* Description */}
-    <p className="text-lg md:text-xl text-gray-700 mb-10">
+    <p className="text-lg md:text-xl text-gray-700 mb-10 text-justify">
       Discover a range of programs tailored for every age and skill level — from early development for young children 
       to competitive coaching for state, national, and para-athletes. Build skills, confidence, and a lifelong love for sport!
     </p>

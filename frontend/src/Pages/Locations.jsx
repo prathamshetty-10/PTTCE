@@ -18,7 +18,7 @@ export default function Locations() {
     {
       name: "Mangalore Center",
       description:
-        'Located in Mangalore, this center serves as our flagship facility, featuring multiple tables and professional training programs. We also collaborate with schools around Mangalore, providing coaching programs tailored to nursery kids under the "Sportsgen" initiative.',
+        'Located in Mangalore, this center serves as our flagship facility, featuring multiple tables and professional training programs. It offers structured table tennis coaching for players across different age groups and skill levels.',
       address: "VV87 + G94, Kankanady, Mangaluru, Karnataka 575002",
       contact: "+91 9481675900",
       hours: "Mon-Sat, 4:30 PM - 8:30 PM",
@@ -149,7 +149,7 @@ export default function Locations() {
                     {location.name}
                   </h2>
                   <p
-                    className="text-base md:text-lg mb-8 text-gray-700 leading-relaxed"
+                    className="text-base md:text-lg mb-8 text-gray-700 leading-relaxed text-justify"
                     style={{ fontFamily: 'Lora, serif' }}
                   >
                     {location.description}
