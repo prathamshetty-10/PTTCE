@@ -171,7 +171,7 @@ export default function Home() {
 
   const gallery = [
      
-    { img: gal10, desc:" Head Coach Ashwin Kumar Padukone guiding kids during a TT coaching session at our Mangaluru academy."},
+    { img: gal10, desc:" Head Coach Ashwin Kumar Padukone guiding kids during a TT coaching session."},
     { img: gal8, desc:"A proud moment as our Mangaluru academy hosts the State Ranking TT Tournament."},
     { img: gal2, desc:""},
     { img: gal3, desc:"Indian TT Head Coach Narayanan Ravichandran visits our academy and interacts with young players."},
@@ -332,7 +332,7 @@ export default function Home() {
 
         {/* Achievements Slider */}
 <div className="w-full py-16 mt-[10px]">
-  <div className="max-w-[85vw] mx-auto px-2">
+  <div className="md:max-w-[85vw] mx-auto md:px-2">
 
     {/* Heading */}
     <div className="text-center mb-12">
@@ -419,7 +419,7 @@ export default function Home() {
         </div>
          {/* Gallery Slider */}
 <div className="w-full py-16 mt-[15px] md:mt-[40px]">
-  <div className="max-w-[95vw] mx-auto px-2">
+  <div className="md:max-w-[95vw] mx-auto md:px-2">
     <div className="text-center mb-12">
       <h2 className="text-5xl font-bold mb-6 text-blue-900" style={{ fontFamily: 'Oswald' }}>
         Memories in Frames
@@ -429,7 +429,7 @@ export default function Home() {
     <Slider {...sliderSettings2}>
       {gallery.map((item, index) => (
         <div key={index} className="px-4"> 
-          <div className="relative w-full h-[70vh] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative w-full h-[55vh] md:h-[70vh] rounded-2xl overflow-hidden ">
 
             {/* Main Image */}
             <img
