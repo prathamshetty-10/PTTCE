@@ -81,20 +81,21 @@ export default function SchoolTraining() {
 
       {/* Heading + Description */}
       <div className="text-center px-4 md:px-16 py-12 md:py-6 max-w-7xl mx-auto mt-9 md:mt-0">
-        <h1
-          className="text-5xl md:text-6xl font-bold text-blue-900 uppercase tracking-wide mb-6"
-          style={{ fontFamily: "Oswald, sans-serif" }}
-        >
-          PTTCE: School Training
-        </h1>
+        
         {/* Logo under heading */}
-        <div className="flex justify-center my-8">
+        <div className="flex justify-center mb-8">
           <img
             src={logo}
             alt="PTTCE Logo"
             className="w-full max-w-5xl md:max-w-xl h-auto md:max-h-56 object-contain"
           />
         </div>
+        <h1
+          className="text-5xl md:text-6xl font-bold text-blue-900 uppercase tracking-wide my-10"
+          style={{ fontFamily: "Oswald, sans-serif" }}
+        >
+          School Training
+        </h1>
 
         <p
           className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed text-justify"

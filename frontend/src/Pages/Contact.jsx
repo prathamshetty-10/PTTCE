@@ -220,23 +220,8 @@ export default function Contact() {
           </form>
         </div>
       </div>
-      {/* logo*/}
-<div className="flex items-center justify-center">
-<img
-    src={logo}
-    alt="Center Logo"
-    className="
-              
-    border-2 border-blue-900
-      w-11/12 sm:w-3/4 md:w-2/3  // responsive widths for mobile, tablet, desktop
-      h-auto                       // maintain aspect ratio
-      max-h-[280px]                 // optional max height
-      object-cover mb-10 shadow-xl rounded-2xl
-       transition-all duration-300
-    "
-  />
-  </div>
-    <div className="max-w-7xl mx-auto px-4 pb-24 pt-12 md:pt-24">
+
+    <div className="max-w-7xl mx-auto px-4 pb-24 pt-8 md:pt-12">
   <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center items-stretch">
 
     {/* Mail Us */}

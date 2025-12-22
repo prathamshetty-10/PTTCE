@@ -73,7 +73,7 @@ const sliderSettings1 = {
     {
       breakpoint: 768,
       settings: {
-        centerPadding: "20px", // small peek in mobile
+        centerPadding: "23px", // small peek in mobile
       }
     }
   ]
@@ -98,7 +98,7 @@ const sliderSettings2 = {
     {
       breakpoint: 768,
       settings: {
-        centerPadding: "20px", // small peek in mobile
+        centerPadding: "23px", // small peek in mobile
       }
     }
   ]
