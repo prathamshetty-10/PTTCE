@@ -297,7 +297,7 @@ export default function EventManagement() {
           className="max-w-7xl mx-auto px-4 text-center"
           style={{ fontFamily: "Lora, serif" }}
         >
-          © 2025 Padukone Centre Of Sports. All rights reserved.
+          © 2025 Padukone Centre for Sports. All rights reserved.
         </div>
       </footer>
     </div>

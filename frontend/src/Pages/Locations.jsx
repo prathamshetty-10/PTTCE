@@ -279,7 +279,7 @@ export default function Locations() {
       <footer className="w-full bg-blue-900  py-6 text-white mt-8">
         <div className="max-w-7xl mx-auto px-4 text-center" style={{ fontFamily: 'Lora, serif' }}>
           <p>
-            © 2025 Padukone Table Tennis Center for Excellence. All rights reserved.
+           © 2025 Padukone Centre for Sports. All rights reserved.
           </p>
         </div>
       </footer>

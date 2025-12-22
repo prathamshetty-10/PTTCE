@@ -431,7 +431,7 @@ export default function SportsEquipment() {
 
       {/* Footer */}
       <footer className="w-full bg-blue-900 py-6 text-white text-center">
-        © 2025 Padukone Table Tennis Center for Excellence. All rights reserved.
+        © 2025 Padukone Centre for Sports. All rights reserved.
       </footer>
     </div>
   );
