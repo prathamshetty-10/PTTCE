@@ -1,3 +1,3 @@
-const host="http://localhost:5001";
-const contactRoute=`${host}/api/contact`;
+
+const contactRoute=`/api/contact`;
 export {contactRoute}
