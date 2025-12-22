@@ -3,7 +3,6 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import Navbar from "../Components/Navbar.jsx";
 import logo from "../assets/logo2.png";
-import {contactRoute} from "../API/Routes.js";
 import { FaUser, FaUsers, FaSchool, FaCalendarAlt, FaBuilding, FaUserPlus, FaHandHoldingUsd, FaBriefcase, FaEnvelope, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 export default function Contact() {
@@ -47,7 +46,7 @@ export default function Contact() {
 
 
     try {
-      const { data } = await axios.post(`${contactRoute}`, formData);
+      const { data } = await axios.post("/api/contact", formData);
 
       if (data.status === true) {
         toast.success("Message Sent");
