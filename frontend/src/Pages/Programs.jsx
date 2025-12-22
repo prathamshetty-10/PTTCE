@@ -154,7 +154,7 @@ export default function Programs() {
             className={`px-6 py-2 rounded-full font-semibold transition-all ${
               activeIndex === index
                 ? "bg-blue-900 text-white shadow-lg"
-                : "bg-gray-200 text-gray-800 hover:bg-blue-600 hover:text-white"
+                : "bg-gray-200 text-gray-800 md:hover:bg-blue-900 md:hover:text-white"
             }`}
             style={{ fontFamily: "Oswald, sans-serif" }}
           >

@@ -426,7 +426,7 @@ export default function AboutPCS() {
 </div>
 {/*slider*/}
 <section className="w-full pb-20 pt-18 md:pt-10 ">
-<div className="max-w-7xl mx-auto px-6">
+<div className="w-full md:max-w-7xl md:mx-auto md:px-6">
 <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-16 text-center">
       Faces of PCS
     </h2>

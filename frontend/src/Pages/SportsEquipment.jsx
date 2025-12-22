@@ -341,7 +341,7 @@ export default function SportsEquipment() {
             className={`flex items-center gap-2 md:gap-3 px-4 py-1 md:px-6 md:py-3 rounded-full border transition-all ${
               activeIndex === index
                 ? "bg-blue-900 text-white border-blue-900 shadow-lg"
-                : "border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
+                : "border-blue-900 text-blue-900 md:hover:bg-blue-900 md:hover:text-white"
             }`}
             style={{ fontFamily: "Oswald, sans-serif" }}
           >
