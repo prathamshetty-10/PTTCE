@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../Components/Navbar.jsx";
 import event1 from "../assets/event1.jpeg"
 import event2 from "../assets/event2.jpeg";
@@ -146,6 +147,14 @@ export default function EventManagement() {
   
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-100 via-white to-blue-200 flex flex-col">
+    <Helmet>
+  <title>Sports Event Management Services | Padukone Centre for Sports</title>
+  <meta
+    name="description"
+    content="Professional sports event management services by Padukone Centre for Sports, under the direction of Ashwin Kumar Padukone."
+  />
+</Helmet>
+
 
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />

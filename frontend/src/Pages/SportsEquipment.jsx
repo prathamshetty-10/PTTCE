@@ -26,6 +26,7 @@ import { GiMeditation } from "react-icons/gi";
 import { GiGymBag } from "react-icons/gi";
 import { GiRunningShoe } from "react-icons/gi";
 import { FaGamepad } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -275,6 +276,15 @@ export default function SportsEquipment() {
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-100 via-white to-blue-200">
+    <Helmet>
+  <title>Sports Equipment Supply & Installation | Padukone Centre for Sports</title>
+  <meta
+    name="description"
+    content="Sports equipment supply and installation services by Padukone Centre for Sports, led by Ashwin Kumar Padukone, for academies and individuals."
+  />
+</Helmet>
+
+
       {/* Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -406,6 +416,9 @@ export default function SportsEquipment() {
           style={{ fontFamily: "Lora, serif" }}
         >
           Whether you’re setting up or upgrading a sports facility, or looking to purchase high-quality equipment for personal use, our expert team is here to help. Contact us to receive our complete sports equipment brochure along with tailored guidance for your needs.
+          <br /><br />
+We also welcome sports equipment brands, manufacturers, and suppliers interested
+in partnering with us for distribution, installation, and collaborative projects.
         </p>
 
         <div className="flex justify-center items-center gap-6">

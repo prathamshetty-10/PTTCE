@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
+import { Helmet } from "react-helmet-async";
 
 // IMPORT ALL IMAGES
 import sportsgenCanara1 from "../assets/sportsgen.jpg";
@@ -114,6 +115,14 @@ export default function SportsGen() {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-100 via-white to-blue-200 flex flex-col">
+    <Helmet>
+  <title>SportsGen Youth Development Program | Padukone Centre for Sports</title>
+  <meta
+    name="description"
+    content="SportsGen is a youth development initiative by Padukone Centre for Sports under the leadership of Ashwin Kumar Padukone, focused on grassroots sports training."
+  />
+</Helmet>
+
 
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -151,7 +160,7 @@ export default function SportsGen() {
                 <div className="flex justify-center mb-8">
                   <img
                     src={logo}
-                    alt="PTTCE Logo"
+                    alt="Table tennis academy training in Udupi Karnataka, Sportsgen"
                     className="w-full max-w-5xl md:max-w-xl h-auto md:max-h-56 object-contain "
                   />
                 </div>
@@ -209,8 +218,8 @@ export default function SportsGen() {
         img2={sportsgenStTheresa2}
       />
       {/* SportsGen Shorts Slider Section */}
-<div className="w-full py-20">
-  <div className="max-w-7xl mx-auto px-4">
+<div className="w-full py-6 md:py-20">
+  <div className="md:max-w-7xl md:mx-auto md:px-4">
 
     {/* Section Heading */}
     <h2
@@ -225,7 +234,7 @@ export default function SportsGen() {
     <div key={index} className="px-4">
 
       {/* Video */}
-      <div className="relative w-full max-w-[300px] mx-auto h-[80vh] max-h-screen rounded-2xl overflow-hidden shadow-xl">
+      <div className="relative w-full max-w-[300px] mx-auto h-[60vh] md:h-[80vh] max-h-screen rounded-2xl overflow-hidden shadow-xl">
         <iframe
           src={`https://www.youtube.com/embed/${video.id}?enablejsapi=1`}
           allow="autoplay; encrypted-media"
@@ -256,7 +265,7 @@ export default function SportsGen() {
 
 
       {/* Partner With Us - CTA Section */}
-<div className="text-center px-4 md:px-16 py-16 max-w-7xl mx-auto">
+<div className="text-center px-4 md:px-16 pt-12 md:pt-16 pb-16 max-w-7xl mx-auto">
   <h2
     className="text-4xl md:text-5xl font-bold text-blue-900 mb-6 uppercase tracking-wide"
     style={{ fontFamily: "Oswald, sans-serif" }}

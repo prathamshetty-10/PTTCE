@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
+import { Helmet } from "react-helmet-async";
 
 // Example school images – replace with real pics
 import school1 from "../assets/school1.jpeg";
@@ -9,52 +10,91 @@ import school3 from "../assets/school3.jpeg";
 import school4 from "../assets/gal4.jpg";
 import school5 from "../assets/school5.jpeg";
 import school6 from "../assets/school6.jpeg";
+import school7 from "../assets/school7.jpg"
+import school8 from "../assets/school8.jpeg"
+import school9 from "../assets/school9.jpeg"
+import school10 from "../assets/school10.jpeg"
+import school11 from "../assets/school11.jpg"
+import school13 from "../assets/school13.jpg"
 import logo from "../assets/pttcelogo.png"
 
 export default function SchoolTraining() {
   const navigate = useNavigate();
 
-  const partneredSchools = [
-    {
-      name: "Carmel School",
-      place: "Moodbidri",
-      state: "Karnataka",
-      image: school1,
-    },
-    {
-      name: "St Teresa School",
-      place: "Mangaluru",
-      state: "Karnataka",
-      image: school2,
-    },
-    {
-      name: "St. Agnes School",
-      place: "Mangaluru",
-      state: "Karnataka",
-      image: school6,
-    },
-    {
-      name: "Mount Carmel School",
-      place: "Mangaluru",
-      state: "Karnataka",
-      image: school3,
-    },
-    {
-      name: "St Aloysius Gonzaga",
-      place: "Mangaluru",
-      state: "Karnataka",
-      image: school5,
-    },
-    {
-      name: "Milagres English Medium School",
-      place: "Kalyanpur",
-      state: "Karnataka",
-      image: school4,
-    },
-  ];
+ const partneredSchools = [
+  {
+    name: "Carmel School, Moodbidri",
+    img1: school7,
+    img2: school1,
+  },
+  {
+    name: "St Teresa School, Mangaluru",
+    img1: school8,
+    img2: school2,
+  },
+  {
+    name: "St. Agnes School, Mangaluru",
+    img1: school9,
+    img2: school6,
+  },
+  {
+    name: "Mount Carmel School, Mangaluru",
+    img1: school13,
+    img2: school3,
+  },
+  {
+    name: "St Aloysius Gonzaga, Mangaluru",
+    img1: school5,
+    img2: school10,
+  },
+  {
+    name: "Milagres English Medium School, Kalyanpur",
+    img1: school11,
+    img2: school4,
+  },
+  
+];
+// ✅ SECTION COMPONENT
+const Section = ({ title, img1, img2 }) => (
+  <div className="max-w-7xl mx-auto px-4 mb-20">
+    <h2
+      className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center"
+      style={{ fontFamily: "Oswald, sans-serif" }}
+    >
+      {title}
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="aspect-[4/3] w-full rounded-xl overflow-hidden shadow-lg">
+        <img
+          src={img1}
+          alt={`${title} 1`}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div className="aspect-[4/3] w-full rounded-xl overflow-hidden shadow-lg">
+        <img
+          src={img2}
+          alt={`${title} 2`}
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+);
+
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-100 via-white to-blue-200">
+    <Helmet>
+  <title>School Sports Training Programs | Padukone Centre for Sports</title>
+  <meta
+    name="description"
+    content="School sports training programs by Padukone Centre for Sports, led by Ashwin Kumar Padukone, focused on student development and long-term athletic growth."
+  />
+</Helmet>
+
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -86,7 +126,7 @@ export default function SchoolTraining() {
         <div className="flex justify-center mb-8">
           <img
             src={logo}
-            alt="PTTCE Logo"
+            alt="Table tennis academy training in Udupi Karnataka"
             className="w-full max-w-5xl md:max-w-xl h-auto md:max-h-56 object-contain"
           />
         </div>
@@ -129,44 +169,27 @@ export default function SchoolTraining() {
       </div>
 
       {/* Partnered Schools Section */}
-<div className="w-full px-4 md:px-8 py-12">
+<div className="w-full pt-16">
   <h2
-    className="text-4xl md:text-5xl font-bold text-center text-blue-900 mb-12 uppercase tracking-wide"
+    className="text-4xl md:text-5xl font-bold text-center text-blue-900 mb-16 uppercase tracking-wide"
     style={{ fontFamily: "Oswald, sans-serif" }}
   >
     Our Partnered Schools
   </h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
-    {partneredSchools.map((school, idx) => (
-      <div
-        key={idx}
-        className="relative w-full h-[380px] md:h-[450px] rounded-xl overflow-hidden shadow-xl bg-cover bg-center"
-        style={{ backgroundImage: `url(${school.image})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-800/80 via-transparent to-transparent"></div>
-
-        <div className="absolute bottom-6 left-6 text-white">
-          <h3
-            className="text-3xl font-bold mb-1"
-            style={{ fontFamily: "Oswald, sans-serif" }}
-          >
-            {school.name}
-          </h3>
-          <p
-            className="text-base text-blue-100"
-            style={{ fontFamily: "Lora, serif" }}
-          >
-            {school.place}, {school.state}
-          </p>
-        </div>
-      </div>
-    ))}
-  </div>
+  {partneredSchools.map((school, index) => (
+    <Section
+      key={index}
+      title={school.name}
+      img1={school.img1}
+      img2={school.img2}
+    />
+  ))}
 </div>
 
+
       {/* Partner With Us */}
-      <div className="px-4 md:px-16 py-16 max-w-7xl mx-auto text-center">
+      <div className="px-4 md:px-16 pt-1 md:pt-12 pb-14  max-w-7xl mx-auto text-center">
         <h2
           className="text-4xl md:text-5xl font-bold text-blue-900 mb-6 uppercase tracking-wide"
           style={{ fontFamily: "Oswald, sans-serif" }}

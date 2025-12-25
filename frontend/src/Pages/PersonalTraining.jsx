@@ -2,12 +2,21 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import logo from "../assets/pttcelogo.png"
+import { Helmet } from "react-helmet-async";
 
 export default function PrivateTraining() {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-100 via-white to-blue-200">
+    <Helmet>
+  <title>Private Sports & Table Tennis Coaching | Padukone Centre for Sports</title>
+  <meta
+    name="description"
+    content="One-on-one private sports and table tennis coaching at Padukone Centre for Sports, guided by Ashwin Kumar Padukone and experienced trainers."
+  />
+</Helmet>
+
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -39,7 +48,7 @@ export default function PrivateTraining() {
         <div className="flex justify-center mb-8">
           <img
             src={logo}
-            alt="PTTCE Logo"
+            alt="Table tennis academy training in Udupi Karnataka"
             className="w-full max-w-5xl md:max-w-xl h-auto md:max-h-56 object-contain"
           />
         </div>

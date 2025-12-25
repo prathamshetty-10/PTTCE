@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Helmet } from "react-helmet-async";
 
 import academyImg from "../assets/manglorecenterpic.jpg";
 import schoolImg from "../assets/gal7.jpg"
@@ -107,6 +108,14 @@ export default function Programs() {
 
   return (
     <div className="min-h-screen w-full flex flex-col  bg-gradient-to-br from-blue-100 via-white to-blue-200">
+    <Helmet>
+  <title>Sports Training Programs | Padukone Centre for Sports</title>
+  <meta
+    name="description"
+    content="Explore sports training programs at Padukone Centre for Sports under the guidance of Ashwin Kumar Padukone, including academies, private coaching, school training, Event Management, Sportsgen and Infrastructure Development."
+  />
+</Helmet>
+
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -2,12 +2,21 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import infra from "../assets/infrapic.jpg"
+import { Helmet } from "react-helmet-async";
 
 export default function InfrastructureDevelopment() {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-100 via-white to-blue-200">
+    <Helmet>
+  <title>Sports Infrastructure Development | Padukone Centre for Sports</title>
+  <meta
+    name="description"
+    content="End-to-end sports infrastructure development services by Padukone Centre for Sports, led by Ashwin Kumar Padukone."
+  />
+</Helmet>
+
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import Navbar from "../Components/Navbar.jsx";
-import logo from "../assets/logo2.png";
+import { Helmet } from "react-helmet-async";
 import { FaUser, FaUsers, FaSchool, FaCalendarAlt, FaBuilding, FaUserPlus, FaHandHoldingUsd, FaBriefcase, FaEnvelope, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 export default function Contact() {
@@ -69,6 +69,15 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen w-full flex flex-col relative  bg-gradient-to-br from-blue-100 via-white to-blue-200 ">
+    <Helmet>
+  <title>Contact Padukone Centre for Sports | Coaching & Enquiries</title>
+  <meta
+    name="description"
+    content="Contact Padukone Centre for Sports, led by Ashwin Kumar Padukone, for admissions, coaching enquiries, sports equipment or partnerships."
+  />
+</Helmet>
+
+
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

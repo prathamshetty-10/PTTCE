@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Components/Navbar.jsx";
+import { Helmet } from "react-helmet-async";
 
 // Placeholder images
 import about1 from "../assets/gal10.jpg";
@@ -205,6 +206,14 @@ arrows: false, // optional: cleaner on phone
 export default function AboutPCS() {
   return (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-100 via-white to-blue-200">
+    <Helmet>
+  <title>About Us | Padukone Centre for Sports</title>
+  <meta
+    name="description"
+    content="Learn about Padukone Centre for Sports, founded and led by Ashwin Kumar Padukone, and our mission to develop athletes through professional coaching and sports programs."
+  />
+</Helmet>
+
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -224,7 +233,8 @@ export default function AboutPCS() {
           className="text-5xl md:text-6xl font-bold text-blue-900 uppercase tracking-wide mb-8"
           style={{ fontFamily: "Oswald, sans-serif" }}
         >
-          Our Journey
+          About Padukone Centre for Sports
+
         </h1>
       </div>
 
@@ -273,7 +283,7 @@ export default function AboutPCS() {
 
           {/* Image */}
           <div className="w-full md:w-1/2 mt-8 md:mt-0">
-            <img src={about1} alt="PCS 2023" className="w-full h-[400px] object-cover rounded-xl shadow-xl" />
+            <img src={about1} alt="Table tennis academy training in Udupi Karnataka" className="w-full h-[400px] object-cover rounded-xl shadow-xl" />
           </div>
         </div>
       </div>
@@ -300,7 +310,7 @@ export default function AboutPCS() {
 
           {/* Image */}
           <div className="w-full md:w-1/2 mt-8 md:mt-0">
-            <img src={about2} alt="SportsGen Program" className="w-full h-[400px] object-cover rounded-xl shadow-xl" />
+            <img src={about2} alt="Table tennis academy training in Udupi Karnataka" className="w-full h-[400px] object-cover rounded-xl shadow-xl" />
           </div>
         </div>
       </div>
@@ -334,7 +344,7 @@ export default function AboutPCS() {
         <div className="w-full h-96 overflow-hidden rounded-xl shadow-lg">
           <img 
             src={founderImg1} 
-            alt="Ashwin Kumar Padukone" 
+            alt="Ashwin Kumar Padukone and Table tennis academy training in Udupi Karnataka"
             className="w-full h-full object-cover object-center"
           />
         </div>
@@ -361,7 +371,7 @@ export default function AboutPCS() {
         <div className="w-full h-96 overflow-hidden rounded-xl shadow-lg">
           <img 
             src={founderImg2} 
-            alt="Ashwin Coaching" 
+            alt="Table tennis academy training in Udupi Karnataka" 
             className="w-full h-full object-cover object-center"
           />
         </div>
@@ -400,7 +410,7 @@ export default function AboutPCS() {
         <div className="w-[80%] h-96 overflow-hidden rounded-xl shadow-lg">
           <img 
             src={assistantCoachImg1} 
-            alt="Swaroop G" 
+            alt="Table tennis academy training in Udupi Karnataka"
             className="w-full h-full object-cover object-center"
           />
         </div>

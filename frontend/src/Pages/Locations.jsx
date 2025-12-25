@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar.jsx";
 import surat from "../assets/homepic1.jpg";
 import mlr from "../assets/infrapic.jpg";
-import mani from "../assets/manipalcenterpic.jpg";
+import mani from "../assets/manipalcenterpic.jpeg";
 import mapPic1 from "../assets/mlrcenter.png";
 import mapPic2 from "../assets/surathcenter.png";
 import mapPic3 from "../assets/manipalcenter.png";
 import logo from "../assets/pttcelogo.png"
+import { Helmet } from "react-helmet-async";
 
 export default function Locations() {
   const navigate = useNavigate();
@@ -16,9 +17,9 @@ export default function Locations() {
 
   const locations = [
     {
-      name: "Mangalore Center",
+      name: "PTTCE Mangaluru",
       description:
-        'Located in Mangalore, this center serves as our flagship facility, featuring multiple tables and professional training programs. It offers structured table tennis coaching for players across different age groups and skill levels.',
+        'Located in Mangaluru, this center serves as our flagship facility, featuring multiple tables and professional training programs. It offers structured table tennis coaching for players across different age groups and skill levels.',
       address: "VV87 + G94, Kankanady, Mangaluru, Karnataka 575002",
       contact: "+91 9481675900",
       hours: "Mon-Sat, 4:30 PM - 8:30 PM",
@@ -27,7 +28,7 @@ export default function Locations() {
       bgImage: mlr,
     },
     {
-      name: "Suratkal Center",
+      name: "PTTCE Suratkal",
       description:
         "The Suratkal center is designed for those passionate about table tennis, offering well-maintained tables and a focused training environment. Our experienced coaches provide personalized attention to help players develop their skills.",
       address: "Edapally - Panvel Highway, Hosabettu, Surathkal, Karnataka 575014",
@@ -38,7 +39,7 @@ export default function Locations() {
       bgImage: surat,
     },
     {
-      name: "Manipal Center",
+      name: "PTTCE Manipal",
       description:
         "Our Manipal center offers a comprehensive training facility fully equipped with top-notch equipment and modern amenities. Located conveniently in the heart of Manipal, this center is perfect for players at all levels looking to train with the very best.",
       address: "8QQP + XHV, HUDCO Colony, Ananth Nagar, Manipal, Karnataka    576104",
@@ -64,6 +65,14 @@ export default function Locations() {
 
   return (
     <div className="min-h-screen w-full flex flex-col  bg-gradient-to-br from-blue-100 via-white to-blue-200">
+    <Helmet>
+  <title>Sports Academies in Mangaluru, Udupi, Manipal, Surathkal, Karnataka | Padukone Centre for Sports</title>
+  <meta
+    name="description"
+    content="Padukone Centre for Sports operates structured sports academies in Mangaluru, Udupi, Manipal and Surathkal, Karnataka guided by Ashwin Kumar Padukone and a team of professional coaches."
+  />
+</Helmet>
+
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -95,7 +104,7 @@ export default function Locations() {
 <div className="flex justify-center mb-8">
   <img
     src={logo}
-    alt="PTTCE Logo"
+    alt="Table tennis academy training in Udupi Karnataka"
     className="w-full max-w-5xl md:max-w-xl h-auto md:max-h-56 object-contain"
   />
 </div>

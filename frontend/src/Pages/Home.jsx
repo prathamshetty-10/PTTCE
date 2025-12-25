@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../Components/Navbar.jsx";
 import { AiFillStar } from "react-icons/ai";
 import vdo from "../assets/transformvdo2.mp4";
@@ -239,6 +240,16 @@ export default function Home() {
 
   return (
     <div className="min-h-screen w-full flex flex-col relative bg-gradient-to-r from-blue-100 via-white to-blue-200">
+   <Helmet>
+  <title>Padukone Centre for Sports | Table Tennis & Sports Academy in Mangaluru, Udupi, Manipal, Surathkal, Karnataka</title>
+  <meta
+    name="description"
+    content="Padukone Centre for Sports, led by Ashwin Kumar Padukone, is a professional table tennis and multi-sports academy serving Mangaluru, Surathkal, Udupi & Manipal."
+  />
+</Helmet>
+
+
+
     {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -284,12 +295,12 @@ export default function Home() {
   <div className="max-w-7xl mx-auto px-4">
 
     {/* Centered Heading */}
-    <h2
+    <h1
       className="text-4xl md:text-5xl font-bold mb-12 text-blue-900 text-center"
       style={{ fontFamily: "Oswald, sans-serif" }}
     >
       Padukone Centre for Sports
-    </h2>
+    </h1>
 
     {/* Content Grid */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -308,7 +319,7 @@ export default function Home() {
       <div>
         <img
           src={about}
-          alt="About Us"
+          alt="About Padukone Centre For Sports, Table tennis academy training in Udupi Karnataka"
           className="w-full h-[360px] object-cover rounded-lg shadow-lg"
         />
       </div>
@@ -435,7 +446,7 @@ export default function Home() {
             <img
               src={item.img}
               className="w-full h-full object-cover"
-              alt=""
+              alt="Table tennis academy training in Udupi Karnataka"
             />
 
             {/* Description (Only if desc is not empty) */}
