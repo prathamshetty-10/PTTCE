@@ -42,7 +42,7 @@ export default function InfrastructureDevelopment() {
       </div>
 
       {/* Heading */}
-      <div className="text-center px-4 md:px-16 pt-12 pb-4 md:pt-8 md:pb-2 max-w-7xl mx-auto mt-9 md:mt-0">
+      <div className="text-center px-4 md:px-16 pt-16 pb-4 md:pt-8 md:pb-2 max-w-7xl mx-auto mt-12 md:mt-0">
         <h1
           className="text-5xl md:text-6xl font-bold text-blue-900 uppercase tracking-wide mb-10"
           style={{ fontFamily: "Oswald, sans-serif" }}
