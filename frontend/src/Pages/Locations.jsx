@@ -66,12 +66,15 @@ export default function Locations() {
   return (
     <div className="min-h-screen w-full flex flex-col  bg-gradient-to-br from-blue-100 via-white to-blue-200">
     <Helmet>
-  <title>Sports Academies in Mangaluru, Udupi, Manipal, Surathkal, Karnataka | Padukone Centre for Sports</title>
+  <title>
+    Table Tennis Academy in Mangaluru, Udupi, Manipal & Surathkal | Padukone Table Tennis Centre for Excellence (PTTCE)
+  </title>
   <meta
     name="description"
-    content="Padukone Centre for Sports operates structured sports academies in Mangaluru, Udupi, Manipal and Surathkal, Karnataka guided by Ashwin Kumar Padukone and a team of professional coaches."
+    content="Padukone Table Tennis Centre for Excellence (PTTCE), a division of Padukone Centre for Sports, offers professional table tennis training in Mangaluru, Udupi, Manipal and Surathkal under the guidance of Ashwin Kumar Padukone."
   />
 </Helmet>
+
 
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -88,12 +88,15 @@ const Section = ({ title, img1, img2 }) => (
   return (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-100 via-white to-blue-200">
     <Helmet>
-  <title>School Sports Training Programs | Padukone Centre for Sports</title>
+  <title>
+    School Table Tennis Training Programs | Padukone Table Tennis Centre for Excellence (PTTCE)
+  </title>
   <meta
     name="description"
-    content="School sports training programs by Padukone Centre for Sports, led by Ashwin Kumar Padukone, focused on student development and long-term athletic growth."
+    content="School table tennis training programs by Padukone Table Tennis Centre for Excellence (PTTCE), a division of Padukone Centre for Sports, led by Ashwin Kumar Padukone and focused on long-term student development."
   />
 </Helmet>
+
 
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />

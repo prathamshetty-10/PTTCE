@@ -9,13 +9,16 @@ export default function PrivateTraining() {
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-100 via-white to-blue-200">
-    <Helmet>
-  <title>Private Sports & Table Tennis Coaching | Padukone Centre for Sports</title>
+   <Helmet>
+  <title>
+    Private Table Tennis Coaching | Padukone Table Tennis Centre for Excellence (PTTCE)
+  </title>
   <meta
     name="description"
-    content="One-on-one private sports and table tennis coaching at Padukone Centre for Sports, guided by Ashwin Kumar Padukone and experienced trainers."
+    content="Private one-on-one table tennis coaching at Padukone Table Tennis Centre for Excellence (PTTCE), a division of Padukone Centre for Sports, guided by Ashwin Kumar Padukone."
   />
 </Helmet>
+
 
       {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
