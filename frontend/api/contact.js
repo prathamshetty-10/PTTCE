@@ -38,7 +38,7 @@ ${message}
     await transporter.sendMail({
       from: process.env.EMAIL,
       to: process.env.EMAIL,
-      subject: "New Contact Request from PTTCE Website",
+      subject: "New Contact Request from Padukone Centre for Sports Website",
       text: messageContent,
     });
 

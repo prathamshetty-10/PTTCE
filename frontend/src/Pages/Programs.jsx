@@ -189,7 +189,7 @@ export default function Programs() {
               {/* Text content */}
               <div className="relative z-10 flex flex-col items-start justify-center h-full px-8 md:px-16 max-w-3xl text-white">
                 <h2
-                  className="text-5xl md:text-6xl font-bold mb-6 uppercase tracking-wide"
+                  className="text-4xl md:text-6xl font-bold mb-6 uppercase tracking-wide"
                   style={{ fontFamily: "Oswald, sans-serif" }}
                 >
                   {program.title}
