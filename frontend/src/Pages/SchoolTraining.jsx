@@ -89,7 +89,7 @@ const Section = ({ title, img1, img2 }) => (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-100 via-white to-blue-200">
     <Helmet>
   <title>
-    School Table Tennis Training Programs | Padukone Table Tennis Centre for Excellence (PTTCE)
+    School Table Tennis Training Programs | Padukone Table Tennis Centre for Excellence (PTTCE) | Padukone Centre for Sports
   </title>
   <meta
     name="description"

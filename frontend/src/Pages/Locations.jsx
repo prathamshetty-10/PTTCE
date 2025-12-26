@@ -67,7 +67,7 @@ export default function Locations() {
     <div className="min-h-screen w-full flex flex-col  bg-gradient-to-br from-blue-100 via-white to-blue-200">
     <Helmet>
   <title>
-    Table Tennis Academy in Mangaluru, Udupi, Manipal & Surathkal | Padukone Table Tennis Centre for Excellence (PTTCE)
+    Table Tennis Academy in Mangaluru, Udupi, Manipal & Surathkal, Karnataka | Padukone Table Tennis Centre for Excellence (PTTCE) | Padukone Centre for Sports
   </title>
   <meta
     name="description"
