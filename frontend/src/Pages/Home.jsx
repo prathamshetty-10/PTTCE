@@ -244,7 +244,7 @@ export default function Home() {
   <title>Padukone Centre for Sports | Sports Academy in Mangaluru, Manipal and Surathkal, Karnataka</title>
   <meta
     name="description"
-    content="Padukone Centre for Sports, led by Ashwin Kumar Padukone, is a professional table tennis and multi-sports academy serving Mangaluru, Surathkal, Udupi & Manipal."
+    content="Padukone Centre for Sports, led by Ashwin Kumar Padukone, is a professional table tennis and multi-sports academy in Mangaluru, Surathkal, Udupi & Manipal."
   />
 </Helmet>
 
