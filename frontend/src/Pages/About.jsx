@@ -51,118 +51,95 @@ const CustomArrow = ({ direction, onClick }) => (
 const achievers = [
 {
 name: "Aditya S M",
-title: "Gold Medalist, Commonwealth Games 2022",
 image: face1,
 },
 {
 name: "Elson Noronha",
-title: "Olympian, Tokyo Olympics 2020",
 image: face2,
 },
 {
 name: "Shashank Bhat",
-title: "Olympian, Tokyo Olympics 2020",
 image: face3,
 },
 {
 name: "Vinay Pranav",
-title: "Olympian, Tokyo Olympics 2020",
 image: face9,
 },
 {
 name: "P Parindran",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face6,
 },
 {
 name: "Ishani Harish",
-title: "Olympian, Tokyo Olympics 2020",
 image: face7,},
 {
 name: "Abhijith Pai",
-title: "Olympian, Tokyo Olympics 2020",
 image: face4,
 },
 {
 name: "Coral Lobo",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face5,
 },
 {
 name: "Sathwika",
-title: "Olympian, Tokyo Olympics 2020",
 image: face8,
 },
 
 
 {
 name: "Ananya Prabhu",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face11,
 },
 {
 name: "Sanman Malpe",
-title: "Olympian, Tokyo Olympics 2020",
 image: face13,
 },
 {
 name: "Prashasthi Shetty",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face14,
 },
 {
 name: "Poornima Raj",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face15,
 },
 {
 name: "Guruprasad",
-title: "Olympian, Tokyo Olympics 2020",
 image: face16,
 },
 {
 name: "Vian Mascarenhas",
-title: "Olympian, Tokyo Olympics 2020",
 image: face17,
 },
 {
 name: "Diya",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face18,
 },
 {
 name: "Aarna Sadotra",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face19,
 },
 {
 name: "Latha Ashok",
-title: "Olympian, Tokyo Olympics 2020",
 image: face20,
 },
 {
 name: "Clara",
-title: "Olympian, Tokyo Olympics 2020",
 image: face21,
 },
 {
 name: "Thara",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face22,
 },
 {
 name: "Riona Mendonca",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face23,
 },
 {
 name: "Velonia Mascarenhas",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face24,
 },
 {
 name: "Harsha Varthaan ",
-title: "World Rank #4, Women’s Doubles 2022",
 image: face25,
 },
 ];
