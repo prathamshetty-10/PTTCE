@@ -272,7 +272,7 @@ export default function AboutPCS() {
               In 2022, PCS took shape professionally with the launch of the first Padukone Table Tennis Centre for
               Excellence at Father Muller Indoor Stadium. With international-standard lighting, and
               premium Stag Black America tables, the centre set a new benchmark for table tennis infrastructure in the
-              region. What began as a single academy soon expanded into Suratkal and then into leading schools across
+              region. What began as a single academy soon expanded into Surathkal and then into leading schools across
               Mangalore through structured after-school sports programs.
               <br /><br />
               From the start, PCS has aimed to build confidence, discipline, fitness, and strong fundamentals in every

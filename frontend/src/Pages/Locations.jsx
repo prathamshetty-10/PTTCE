@@ -28,9 +28,9 @@ export default function Locations() {
       bgImage: mlr,
     },
     {
-      name: "PTTCE Suratkal",
+      name: "PTTCE Surathkal",
       description:
-        "The Suratkal center is designed for those passionate about table tennis, offering well-maintained tables and a focused training environment. Our experienced coaches provide personalized attention to help players develop their skills.",
+        "The Surathkal center is designed for those passionate about table tennis, offering well-maintained tables and a focused training environment. Our experienced coaches provide personalized attention to help players develop their skills.",
       address: "Edapally - Panvel Highway, Hosabettu, Surathkal, Karnataka 575014",
       contact: "+91 9481675900",
       hours: "Mon-Sat, 4:30 PM - 8:30 PM",

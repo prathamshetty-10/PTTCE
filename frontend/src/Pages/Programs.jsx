@@ -38,7 +38,7 @@ export default function Programs() {
       id: "academies",
       title: "PTTCE: Academies",
       description:
-        "Specialized table tennis coaching delivered across our academies in Mangalore, Suratkal, and Manipal, shaping skilled and confident players.",
+        "Specialized table tennis coaching delivered across our academies in Mangalore, Surathkal, and Manipal, shaping skilled and confident players.",
       link: "/programs/academies",
       bgImage: academyImg,
     },
