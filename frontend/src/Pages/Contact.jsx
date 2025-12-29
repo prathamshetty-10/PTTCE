@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import Navbar from "../Components/Navbar.jsx";
@@ -6,6 +6,8 @@ import { Helmet } from "react-helmet-async";
 import { FaUser, FaUsers, FaSchool, FaCalendarAlt, FaBuilding, FaUserPlus, FaHandHoldingUsd, FaBriefcase, FaEnvelope, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 export default function Contact() {
+  const formRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -32,8 +34,25 @@ export default function Contact() {
   };
 
   const handleContactType = (type) => {
-    setFormData({ ...formData, contactType: type });
-  };
+  setFormData({ ...formData, contactType: type });
+
+  // 📱 Mobile-only scroll with offset
+  if (window.innerWidth < 768 && formRef.current) {
+    const yOffset = -90; // 👈 adjust this if needed (navbar height)
+    const y =
+      formRef.current.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }, 150);
+  }
+};
+
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -124,7 +143,7 @@ export default function Contact() {
         </div>
 
         {/* Right: Contact Form */}
-        <div className="md:w-1/2 bg-white p-12 rounded-3xl shadow-2xl 
+        <div ref={formRef} className="md:w-1/2 bg-white p-12 rounded-3xl shadow-2xl 
     border-2 border-blue-900">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid md:grid-cols-2 gap-8">

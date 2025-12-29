@@ -194,30 +194,30 @@ export default function Home() {
 
   ]
 
-  const reviews = [
-    
-    {
-      name: "Dr. Keshav Prabhu",
-      rating: 5,
-      review: "PTTCE is excellent academy for learning table tennis sport. Ashwin Sir is the dedicated teacher, coach, guide and trainer. Absolutely fantastic facilities and fitness coaching for students."
-    },
-    {
-      name: "Pratham Shetty",
-      rating: 5,
-      review: "PTTCE has truly raised the bar. The coaching is top-notch, the facilities are excellent, and the overall training experience is outstanding. Highly recommended for anyone serious about improving their game"
-    },
-    {
-      name: "Varun Prabhu",
-      rating: 5,
-      review: "A very Good Academy For Aspiring Table tennis players starting from professional level to beginner level. Ashwin Sir Is Just Excellent and his way of teaching kids and Adults Is just amazing."
-    },
-    {
-      name: "Ansh Sureshan",
-      rating: 5,
-      review: "Looking for a Professional Academy along with The Best All Round Dedicated Coach for ur Ward - Ur at rgt place. Along with His Superb team. They are Fantastic."
-    },
-    
-  ];
+ const reviews = [
+  {
+    name: "Dr. Keshav Prabhu",
+    rating: 5,
+    review: "PTTCE is excellent academy for learning table tennis sport. Ashwin Sir is the dedicated teacher, coach, guide and trainer. Absolutely fantastic facilities and fitness coaching for students."
+  },
+  {
+    name: "Pratham Shetty",
+    rating: 5,
+    review: "PTTCE has truly raised the bar in professional coaching. The training quality and facilities are excellent. The overall experience is well-structured, focused, and highly recommended for serious players."
+  },
+  {
+    name: "Varun Prabhu",
+    rating: 5,
+    review: "A very good academy for aspiring table tennis players at all levels. Ashwin Sir is an excellent coach and mentor. His method of training kids and adults is clear, effective, and motivating."
+  },
+  {
+    name: "Ansh Sureshan",
+    rating: 5,
+    review: "Looking for a professional academy with a dedicated coach for your ward? You’re at the right place. Along with his superb team, the training support and guidance are truly fantastic."
+  },
+];
+
+
 
   const faqs = [
     {
@@ -342,7 +342,7 @@ export default function Home() {
 
 
         {/* Achievements Slider */}
-<div className="w-full py-16 mt-[10px]">
+<div className="w-full py-16 md:mt-[10px]">
   <div className="md:max-w-[85vw] mx-auto md:px-2">
 
     {/* Heading */}
@@ -408,28 +408,87 @@ export default function Home() {
     
 
         {/* Reviews Section */}
-        <div className="w-full py-16 mt-[10px]">
-          <div className="w-full max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-6 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>
-                What People Say About Us
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {reviews.map((review, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-blue-900">
-                  <h3 className="text-2xl font-semibold mb-2 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>{review.name}</h3>
-                  <div className="flex items-center text-yellow-500 text-lg font-medium mb-4">
-                    {[...Array(review.rating)].map((_, i) => <AiFillStar key={i} />)}
-                  </div>
-                  <p className="text-gray-600 leading-relaxed text-lg md:text-xl" style={{ fontFamily: 'Lora, serif' }}>{review.review}</p>
-                </div>
-              ))}
+<div className="w-full py-16 mt-[10px]">
+  <div className="w-full max-w-7xl md:mx-auto md:px-4">
+
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2
+        className="text-5xl font-bold mb-6 text-blue-900"
+        style={{ fontFamily: "Oswald, sans-serif" }}
+      >
+        What People Say About Us
+      </h2>
+    </div>
+
+    {/* ================= DESKTOP / TABLET GRID ================= */}
+    <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      {reviews.map((review, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-blue-900"
+        >
+          <h3
+            className="text-2xl font-semibold mb-2 text-blue-900"
+            style={{ fontFamily: "Oswald, sans-serif" }}
+          >
+            {review.name}
+          </h3>
+
+          <div className="flex items-center text-yellow-500 text-lg font-medium mb-4">
+            {[...Array(review.rating)].map((_, i) => (
+              <AiFillStar key={i} />
+            ))}
+          </div>
+
+          <p
+            className="text-gray-600 leading-relaxed text-lg"
+            style={{ fontFamily: "Lora, serif" }}
+          >
+            {review.review}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    {/* ================= MOBILE SLIDER ================= */}
+    <div className="block md:hidden">
+      <Slider {...sliderSettings2}>
+        {reviews.map((review, index) => (
+          <div key={index} className="px-4 h-[400px]">
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-blue-900 h-full">
+
+              <h3
+                className="text-2xl font-semibold mb-2 text-blue-900 text-center"
+                style={{ fontFamily: "Oswald, sans-serif" }}
+              >
+                {review.name}
+              </h3>
+
+              <div className="flex justify-center text-yellow-500 text-lg font-medium mb-4">
+                {[...Array(review.rating)].map((_, i) => (
+                  <AiFillStar key={i} />
+                ))}
+              </div>
+
+              <p
+                className="text-gray-600 leading-relaxed text-lg text-center"
+                style={{ fontFamily: "Lora, serif" }}
+              >
+                {review.review}
+              </p>
+
             </div>
           </div>
-        </div>
+        ))}
+      </Slider>
+    </div>
+
+  </div>
+</div>
+
          {/* Gallery Slider */}
-<div className="w-full py-16 mt-[15px] md:mt-[40px]">
+<div className="w-full py-16 mt-[0px] md:mt-[40px]">
   <div className="md:max-w-[95vw] mx-auto md:px-2">
     <div className="text-center mb-12">
       <h2 className="text-5xl font-bold mb-6 text-blue-900" style={{ fontFamily: 'Oswald' }}>
@@ -467,7 +526,7 @@ export default function Home() {
 
 
         {/* FAQ Section */}
-        <div className="w-full pt-16 pb-12 mt-[10px]">
+        <div className="w-full pt-16 pb-12 mt-0 md:mt-[10px]">
           <div className="w-full max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold mb-6 text-blue-900" style={{ fontFamily: 'Oswald, sans-serif' }}>
