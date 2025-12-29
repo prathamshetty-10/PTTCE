@@ -32,7 +32,7 @@ const eventRows = [
   {
     item1: {
       src: event3,
-      title: "Sports Day at Canara Nandagokul Preschool, Mangaluru",
+      title: "Sports Day at Canara Nandagokul Preschool, Mangalore",
     },
     item2: {
       src: event5,
@@ -82,7 +82,7 @@ const eventRows = [
   {
     item1: {
       src: event14,
-      title: "Yoga Day Event at Father Muller Indoor Stadium, Mangaluru",
+      title: "Yoga Day Event at Father Muller Indoor Stadium, Mangalore",
     },
     item2: {
       src: event15,
@@ -92,11 +92,11 @@ const eventRows = [
   {
     item1: {
       src: event16,
-      title: "Training Camp at Mangaluru University",
+      title: "Training Camp at Mangalore University",
     },
     item2: {
       src: event17,
-      title: "World TT Day Event at Father Muller Indoor Stadium, Mangaluru",
+      title: "World TT Day Event at Father Muller Indoor Stadium, Mangalore",
     },
   },
   
@@ -233,7 +233,7 @@ export default function EventManagement() {
           className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center"
           style={{ fontFamily: "Oswald, sans-serif" }}
         >
-          State Ranking TT Tournament at PTTCE Mangaluru Academy
+          State Ranking TT Tournament at PTTCE Mangalore Academy
         </h2>
 
         <div className="aspect-video w-full rounded-xl overflow-hidden shadow-lg">

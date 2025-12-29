@@ -173,19 +173,19 @@ export default function Home() {
   const gallery = [
      
     { img: gal10, desc:" Head Coach Ashwin Kumar Padukone guiding kids during a TT coaching session."},
-    { img: gal8, desc:"A proud moment as our Mangaluru academy hosts the State Ranking TT Tournament."},
+    { img: gal8, desc:"A proud moment as our Mangalore academy hosts the State Ranking TT Tournament."},
     { img: gal2, desc:""},
     { img: gal3, desc:"Indian TT Head Coach Narayanan Ravichandran visits our academy and interacts with young players."},
     
     { img: gal9, desc:"St. Teresa School hosts the inter-school Zonal TT competition organized by PTTCE."},
     { img: gal4, desc:"PTTCE: Milagres English Medium School, Kalyanpura, Karnataka"},
-    { img: gal14, desc:"Sportsgen program at Canara Nandagokul Preschool, Mangaluru, Karnataka"},
+    { img: gal14, desc:"Sportsgen program at Canara Nandagokul Preschool, Mangalore, Karnataka"},
     { img: gal5, desc:""},
    
-    { img: gal6, desc:"PTTCE: Mount Carmel Central School, Mangaluru, Karnataka"},
+    { img: gal6, desc:"PTTCE: Mount Carmel Central School, Mangalore, Karnataka"},
     
     { img: gal12, desc:"Head Coach Ashwin Kumar Padukone with assistant coaches Shashank Bhat, Abhijith Pai, Elson, Aarna, Vinay, Vian, Aditya, and Nithish."},
-    { img: gal7, desc:"PTTCE: Saint Teresa School, Mangaluru, Karnataka"},
+    { img: gal7, desc:"PTTCE: Saint Teresa School, Mangalore, Karnataka"},
     { img: gal15, desc:"SportsGen at Sri Siddhivinayaka Residential School, Kundapura, Udupi"},
     { img: gal11, desc:""},
     { img: gal13, desc:"Head Coach Ashwin Kumar Padukone with assistant coaches Aditya, Swaroop and Sujith. "},
@@ -241,10 +241,10 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full flex flex-col relative bg-gradient-to-r from-blue-100 via-white to-blue-200">
    <Helmet>
-  <title>Padukone Centre for Sports | Sports Academy in Mangaluru, Manipal and Surathkal, Karnataka</title>
+  <title>Padukone Centre for Sports | Sports Academy in Mangalore, Manipal and Surathkal, Karnataka</title>
   <meta
     name="description"
-    content="Padukone Centre for Sports, led by Ashwin Kumar Padukone, is a professional table tennis and multi-sports academy in Mangaluru, Surathkal, Udupi & Manipal."
+    content="Padukone Centre for Sports, led by Ashwin Kumar Padukone, is a professional table tennis and multi-sports academy in Mangalore, Surathkal, Udupi & Manipal."
   />
 </Helmet>
 

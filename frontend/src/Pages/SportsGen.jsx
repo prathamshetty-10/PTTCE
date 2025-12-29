@@ -201,7 +201,7 @@ export default function SportsGen() {
 
       {/* LOCATIONS */}
       <Section
-        title="SportsGen at Canara Nandagokul Preschool, Mangaluru"
+        title="SportsGen at Canara Nandagokul Preschool, Mangalore"
         img1={sportsgenCanara1}
         img2={sportsgenCanara2}
       />
@@ -213,7 +213,7 @@ export default function SportsGen() {
       />
 
       <Section
-        title="SportsGen at St. Theresa's ICSE School, Mangaluru"
+        title="SportsGen at St. Theresa's ICSE School, Mangalore"
         img1={sportsgenStTheresa1}
         img2={sportsgenStTheresa2}
       />

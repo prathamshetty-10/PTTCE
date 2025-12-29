@@ -17,10 +17,10 @@ export default function Locations() {
 
   const locations = [
     {
-      name: "PTTCE Mangaluru",
+      name: "PTTCE Mangalore",
       description:
-        'Located in Mangaluru, this center serves as our flagship facility, featuring multiple tables and professional training programs. It offers structured table tennis coaching for players across different age groups and skill levels.',
-      address: "VV87 + G94, Kankanady, Mangaluru, Karnataka 575002",
+        'Located in Mangalore, this center serves as our flagship facility, featuring multiple tables and professional training programs. It offers structured table tennis coaching for players across different age groups and skill levels.',
+      address: "VV87 + G94, Kankanady, Mangalore, Karnataka 575002",
       contact: "+91 9481675900",
       hours: "Mon-Sat, 4:30 PM - 8:30 PM",
       mapsQuery: "Fr+Muller+Indoor+Stadium",
@@ -67,11 +67,11 @@ export default function Locations() {
     <div className="min-h-screen w-full flex flex-col  bg-gradient-to-br from-blue-100 via-white to-blue-200">
     <Helmet>
   <title>
-    Table Tennis Academy in Mangaluru, Udupi, Manipal & Surathkal, Karnataka | Padukone Table Tennis Centre for Excellence (PTTCE) | Padukone Centre for Sports
+    Table Tennis Academy in Mangalore, Udupi, Manipal & Surathkal, Karnataka | Padukone Table Tennis Centre for Excellence (PTTCE) | Padukone Centre for Sports
   </title>
   <meta
     name="description"
-    content="Padukone Table Tennis Centre for Excellence (PTTCE), a division of Padukone Centre for Sports, offers professional table tennis training in Mangaluru, Udupi, Manipal and Surathkal under the guidance of Ashwin Kumar Padukone."
+    content="Padukone Table Tennis Centre for Excellence (PTTCE), a division of Padukone Centre for Sports, offers professional table tennis training in Mangalore, Udupi, Manipal and Surathkal under the guidance of Ashwin Kumar Padukone."
   />
 </Helmet>
 

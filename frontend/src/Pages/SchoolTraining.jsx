@@ -28,22 +28,22 @@ export default function SchoolTraining() {
     img2: school1,
   },
   {
-    name: "St Teresa School, Mangaluru",
+    name: "St Teresa School, Mangalore",
     img1: school8,
     img2: school2,
   },
   {
-    name: "St. Agnes School, Mangaluru",
+    name: "St. Agnes School, Mangalore",
     img1: school9,
     img2: school6,
   },
   {
-    name: "Mount Carmel School, Mangaluru",
+    name: "Mount Carmel School, Mangalore",
     img1: school13,
     img2: school3,
   },
   {
-    name: "St Aloysius Gonzaga, Mangaluru",
+    name: "St Aloysius Gonzaga, Mangalore",
     img1: school5,
     img2: school10,
   },
